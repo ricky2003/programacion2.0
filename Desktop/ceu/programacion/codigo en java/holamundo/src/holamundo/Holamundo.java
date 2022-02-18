@@ -1,8 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package holamundo;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 /**
  *
@@ -10,11 +10,19 @@ package holamundo;
  */
 public class Holamundo {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        // TODO code application logic here
+        System.out.println("Hola Mundo");
+        System.out.println("introduce tu nombre");
+        BufferedReader consola = new BufferedReader(new InputStreamReader(System.in));
+        String name;//ponerlo simprefuera de el try-catch
+        try {
+            name = consola.readLine();
+
+        } catch (IOException ex) {
+            name = "pepito grillo";
+        }
+        System.out.println("el nombre ha sido: " + name);
+
     }
-    
+
 }
