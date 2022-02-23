@@ -10,13 +10,13 @@ public class ejercicio09 {
         char[][] C = new char[10][5];
 
         for (int i = 0; i < 10; i++) {
-            C[i] = 'z';
-            System.out.println("esto es lo que aparecera en la priemro fila: " + C[i]);
-            for (int j = 0; j < 10; j++) {
-                C[j] = 'z';
-                System.out.println("esto es lo que aparecera en la priemro fila: " + C[j]);
+
+            for (int j = 0; j < 5; j++) {
+                C[i][j] = 'z';
+                System.out.print(" " + C[i][j]);
             }
 
+            System.out.print(" \n");
         }
     }
 
