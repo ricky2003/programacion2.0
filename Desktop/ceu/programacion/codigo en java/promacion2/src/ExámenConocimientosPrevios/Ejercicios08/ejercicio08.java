@@ -11,7 +11,8 @@ public class ejercicio08 {
         int[] cadena = new int[50];
         for (int i = 0; i < 50; i++) {
             cadena[i] = i + 2;
-            System.out.println("la cadena es : " + cadena[i]);
+            System.out.print(" " + cadena[i]);
+
         }
 
     }
