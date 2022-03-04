@@ -10,11 +10,10 @@ import java.io.InputStreamReader;
  */
 public class EjercicioParaEntregar13 {
 
-    public static void main(String[] args) {
-
+    public static String invertirpalabra(String palabra) {
         try {
             System.out.println("Escribe una cadena de texto :");
-            String palabra;
+
             String palabra_invertida = "";
 
             BufferedReader consola = new BufferedReader(new InputStreamReader(System.in));
@@ -31,6 +30,15 @@ public class EjercicioParaEntregar13 {
         } catch (IOException ex) {
             System.out.println("Se ha producido un error" + ex);
         }
+        return palabra;
+    }
+
+    ;
+
+    public static void main(String[] args) {
+        String palabra = "";
+        EjercicioParaEntregar13.invertirpalabra(palabra);
+
     }
 
 }
