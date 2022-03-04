@@ -10,18 +10,18 @@ import java.io.InputStreamReader;
  */
 public class ejercicio12ParaEntregar {
 
-    public static void main(String[] args) throws IOException {
-
+    public static String cantidadvocales(String palabra) {
         try {
 
             System.out.println("Escribe una cadena de texto :");
-            String palabra;
+
             int contador_vocales = 0;
             int contador_consonantes = 0;
             BufferedReader consola = new BufferedReader(new InputStreamReader(System.in));
             palabra = consola.readLine();
             System.out.println("La cadena de texto leida es:" + palabra);
             for (int i = 0; i <= palabra.length() - 1; i++) {
+
                 if (palabra.charAt(i) == 'a' || palabra.charAt(i) == 'e' || palabra.charAt(i) == 'i' || palabra.charAt(i) == 'o' || palabra.charAt(i) == 'u') {
                     contador_vocales++;
 
@@ -35,6 +35,15 @@ public class ejercicio12ParaEntregar {
         } catch (IOException ex) {
             System.out.println("Se ha producido un error" + ex);
         }
+        return palabra;
+    }
+
+    ;
+
+    public static void main(String[] args) throws IOException {
+        String palabra = "";
+        ejercicio12ParaEntregar.cantidadvocales(palabra);
+
     }
 
 }
