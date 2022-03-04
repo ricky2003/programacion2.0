@@ -12,7 +12,7 @@ public class ejercicio04 {
 
     public static void main(String[] args) {
 
-        List<Double> t = new ArrayList<Double>();
+        List<Double> t = new ArrayList<>();
         int[] ArrayList = null;
         for (int i = 0; i <= 100; i++) {
 
