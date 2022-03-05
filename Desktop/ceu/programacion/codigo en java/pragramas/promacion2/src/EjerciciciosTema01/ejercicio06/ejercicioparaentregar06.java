@@ -49,7 +49,7 @@ public class ejercicioparaentregar06 {
             //este bucle te ense;a todos los primos del 1 al 100
             if (numero == true) {
 
-                System.out.println("el numero " + Primo + " es primo");
+                System.out.println("" + Primo);
             }
         }
 
