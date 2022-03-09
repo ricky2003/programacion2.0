@@ -1,6 +1,6 @@
 package ExámenConocimientosPrevios.Ejercicio07;
 
-import utilidades.utilidades;
+import EjerciciciosTema01.ejercicio06.utilidades;
 
 /**
  *

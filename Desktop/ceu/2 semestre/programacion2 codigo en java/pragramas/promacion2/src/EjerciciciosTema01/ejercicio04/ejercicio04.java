@@ -1,7 +1,7 @@
 package EjerciciciosTema01.ejercicio04;
 
 import java.util.ArrayList;
-import utilidades.utilidades;
+import EjerciciciosTema01.ejercicio06.utilidades;
 
 /**
  *

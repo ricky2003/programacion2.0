@@ -6,62 +6,33 @@ package EjerciciciosTema01.ejercicio06;
  */
 public class RVillaracoEntregaT1ejer06 {
 
-    public static int esPrimo(int Primo) {
-        boolean numero = true;
-
-        for (int j = 2; j > 1; j--) {
-            //si si es primo es divisible entre 2 este no se te pondra en la pantalla
-            if (Primo % j == 0) {
-
-                numero = false;
-                break;
-            }
-        }
-
-        return Primo;
-    }
-
-    ;
-
-    public static boolean cienPrimos(boolean numero) {
-        int Primo = 0;
-
-        //estructura para saber si es primo o no
-        for (Primo = 2; Primo <= 100; Primo++) {
-
-            numero = true;
-
-            for (int j = 2; j > 1; j--) {
-
-                //si si es primo es divisible entre 2 este no se te pondra en la pantalla
-                if (Primo % j == 0) {
-
-                    numero = false;
-                    break;
+    public static String Primos(String primos) {
+        int i = 0;
+        int num = 0;
+        for (i = 1; i <= 100; i++) {
+            int counter = 0;
+            for (num = i; num >= 1; num--) {
+                if (i % num == 0) {
+                    counter = counter + 1;
                 }
             }
+            if (counter == 2) {
+                //Appended the Prime number to the String
+                primos = primos + i + "\n";
 
-            //este bucle te ense;a todos los primos del 1 al 100
-            if (numero == true) {
-
-                System.out.println("" + Primo);
             }
-
         }
+        return primos;
 
-        return numero;
     }
 
     ;
 
     public static void main(String[] args) {
 
-        boolean numero = true;
+        String primos = "";
 
-        System.out.println("los primos del 1 al 100:\n");
-
-        RVillaracoEntregaT1ejer06.cienPrimos(numero);
+        System.out.println("" + RVillaracoEntregaT1ejer06.Primos(primos));
 
     }
-
 }
