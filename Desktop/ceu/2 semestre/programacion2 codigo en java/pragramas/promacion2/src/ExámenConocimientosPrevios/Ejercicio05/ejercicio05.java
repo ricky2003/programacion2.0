@@ -4,7 +4,7 @@ package ExámenConocimientosPrevios.Ejercicio05;
  *
  * @author Ricardo García-Villaraco<ricardo.garciavillaracosanchez@usp.ceu.es>
  */
-import EjerciciciosTema01.ejercicio06.utilidades;
+import utilidades.utilidades;
 
 public class ejercicio05 {
 

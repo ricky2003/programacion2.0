@@ -1,6 +1,6 @@
 package holamundo;
 
-import EjerciciciosTema01.ejercicio06.utilidades;
+import utilidades.utilidades;
 
 /**
  *
