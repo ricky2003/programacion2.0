@@ -6,6 +6,11 @@ package EjerciciciosTema01.ejercicio06;
  */
 public class RVillaracoEntregaT1ejer06 {
 
+    /**
+     *
+     * @param primos
+     * @return
+     */
     public static String Primos(String primos) {
         int i = 0;
         int num = 0;
