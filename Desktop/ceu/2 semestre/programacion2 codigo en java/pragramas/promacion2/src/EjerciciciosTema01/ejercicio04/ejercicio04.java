@@ -1,39 +1,29 @@
 package EjerciciciosTema01.ejercicio04;
 
-import java.util.ArrayList;
-import utilidades.utilidades;
-
 /**
+ * solo falta que los datos los de le usuario
  *
  * @author Ricardo García-Villaraco<ricardo.garciavillaracosanchez@usp.ceu.es>
  */
 public class ejercicio04 {
 
-    public static void main(String[] args) {
-        int maximo = 0;
-        int minimo = 0;
-        int numero = 0;
-        ArrayList<Integer> cadenaEnteros = new ArrayList();
-        utilidades.leeEntero("escribe un numero= ");
-        while (cadenaEnteros.get(numero) < 0) {
-            utilidades.leeEntero("escribe un numero= ");
-            cadenaEnteros.add(numero);
+    public static void main(String[] ARGS) {
+        int[] myList = {5, 4, 8, 6, 3, 2, 9};
 
-        }
-        for (numero = 0; numero < cadenaEnteros.size(); numero++) {
-            if (cadenaEnteros.get(numero) < minimo) {
-                minimo = cadenaEnteros.get(numero);
+        int i, max, min;
+
+        min = max = myList[0];
+
+        for (i = 0; i < myList.length; i++) {
+            if (min > myList[i]) {
+                min = myList[i];
             }
-        }
-        for (numero = 0; numero < cadenaEnteros.size(); numero++) {
-            if (cadenaEnteros.get(numero) > maximo) {
-                maximo = cadenaEnteros.get(numero);
+            if (max < myList[i]) {
+                max = myList[i];
             }
         }
 
-        System.out.println("el máximo de la lista es : " + maximo);
-        System.out.println("el mínimo de la lista es : " + minimo);
-
+        System.out.println("El máximo es " + max + " y el minimo es " + min);
     }
 
 }

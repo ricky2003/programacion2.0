@@ -1,5 +1,7 @@
-package EjerciciciosTema01.utilidades;
+package EjerciciciosTema01;
 
+import utilidades.*;
+import EjerciciciosTema01.ejercicio06.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
