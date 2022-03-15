@@ -1,5 +1,7 @@
 package EjerciciciosTema01.ejercicio12;
 
+import EjerciciciosTema01.utilidades.utilidades;
+
 public class RVillaracoEntregaT1ejer12 {
 
     public static int LeeUnString(int contador_vocales) {
