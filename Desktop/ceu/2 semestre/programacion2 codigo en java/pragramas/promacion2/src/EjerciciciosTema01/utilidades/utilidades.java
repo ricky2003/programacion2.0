@@ -1,4 +1,4 @@
-package EjerciciciosTema01.ejercicio13;
+package EjerciciciosTema01.utilidades;
 
 import java.io.BufferedReader;
 import java.io.IOException;
