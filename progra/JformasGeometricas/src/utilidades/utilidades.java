@@ -1,7 +1,5 @@
-package EjerciciciosTema01;
+package utilidades;
 
-import utilidades.*;
-import EjerciciciosTema01.ejercicio06.*;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -13,22 +11,19 @@ import java.io.InputStreamReader;
 public class utilidades {
 
     public static String LeeCadena(String Pregunta) {
-        BufferedReader consola = new BufferedReader(new InputStreamReader(System.in));
         System.out.println(Pregunta);
-
-        String cadena;//ponerlo siempre fuera de el try-catch
+        BufferedReader consola = new BufferedReader(new InputStreamReader(System.in));
+        String name;//ponerlo siempre fuera de el try-catch
         try {
-            cadena = consola.readLine();//es el scanf de c
+            name = consola.readLine();//es el scanf de c
 
         } catch (IOException ex) {
-            cadena = "";
+            name = "pepito grillo";
         }
 
-        return cadena;
+        return name;
 
     }
-
-    ;
 
     /**
      * esta funcion lee un entero por consola
@@ -48,8 +43,6 @@ public class utilidades {
 
     }
 
-    ;
-
     public static double leeDouble(String Pregunta) {
         String CadenaNumero = LeeCadena(Pregunta);
         double elNumero;
@@ -61,7 +54,5 @@ public class utilidades {
         return elNumero;
 
     }
-
-;
 
 }

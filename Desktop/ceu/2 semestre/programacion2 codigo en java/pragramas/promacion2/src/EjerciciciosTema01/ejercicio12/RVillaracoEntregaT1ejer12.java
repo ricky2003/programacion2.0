@@ -1,6 +1,6 @@
 package EjerciciciosTema01.ejercicio12;
 
-import EjerciciciosTema01.utilidades;
+import EjerciciciosTema01.utilidades.utilidades;
 
 public class RVillaracoEntregaT1ejer12 {
 
