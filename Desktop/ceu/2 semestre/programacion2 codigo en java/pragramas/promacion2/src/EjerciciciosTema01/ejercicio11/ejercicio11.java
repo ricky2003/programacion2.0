@@ -1,46 +1,49 @@
 package EjerciciciosTema01.ejercicio11;
 
-import java.util.Arrays;
-
 /**
+ * me faltarioa solo que el usuar5io da los numeros de los tama;os y el interior
+ * de las matrices
  *
  * @author Ricardo García-Villaraco<ricardo.garciavillaracosanchez@usp.ceu.es>
  */
 public class ejercicio11 {
 
-    static void inicializarMatriz1(int[][] matriz1) {
-        int i1 = 0;
-        i1 = utilidades.utilidades.leeEntero("escribe la dimesion i de la atriz");
-        int j1 = 0;
-        j1 = utilidades.utilidades.leeEntero("escribe la dimension j de la matriz");
-
-        for (int i = 0; i <= i1; i++) {
-            for (int j = 0; j <= j1; j++) {
-                matriz1[i1][j1] = utilidades.utilidades.leeEntero("escribe un numero");
-            }
-        }
-
-    }
-
-    static void inicializarMatriz2(int[][] matriz2) {
-        int i2 = 0;
-        i2 = utilidades.utilidades.leeEntero("escribe la dimesion i de la atriz");
-        int j2 = 0;
-        j2 = utilidades.utilidades.leeEntero("escribe la dimension j de la matriz");
-        for (int i = 0; i <= i2; i++) {
-            for (int j = 0; j <= j2; j++) {
-                matriz2[i2][j2] = utilidades.utilidades.leeEntero("escribe un numero");
-            }
-        }
-    }
-
     public static void main(String[] args) {
-        int[][] matriz1 = null;
-        int[][] matriz2 = null;
+        int[][] matrizA = {
+            {3, 2, 1},
+            {1, 1, 3},
+            {0, 2, 1},};
+        int[][] matrizB = {
+            {2, 1},
+            {1, 0},
+            {3, 2},};
 
-        ejercicio11.inicializarMatriz1(matriz1);
-        ejercicio11.inicializarMatriz2(matriz2);
-        System.out.println("la matriz 2 es : " + Arrays.toString(matriz1));
-        System.out.println("la matriz 2 es : " + Arrays.toString(matriz2));
+        //Lugar en donde se almacena el resultado
+        int[][] producto = new int[matrizB.length][matrizB[0].length];
+
+        // Necesitamos hacer esto por cada columna de la segunda matriz (B)
+        for (int a = 0; a < matrizB[0].length; a++) {
+            // Dentro recorremos las filas de la primera (A)
+            for (int i = 0; i < matrizA.length; i++) {
+                int suma = 0;
+                // Y cada columna de la primera (A)
+                for (int j = 0; j < matrizA[0].length; j++) {
+                    // Multiplicamos y sumamos resultado
+                    suma += matrizA[i][j] * matrizB[j][a];
+                }
+                // Lo acomodamos dentro del producto
+                producto[i][a] = suma;
+            }
+        }
+
+        // Recorrer producto
+        System.out.print("Imprimiendo producto\n");
+        for (int i = 0; i < matrizB.length; i++) {
+            for (int j = 0; j < matrizB[0].length; j++) {
+                System.out.printf("%d ", producto[i][j]);
+            }
+            System.out.print("\n");
+        }
     }
+
 }
