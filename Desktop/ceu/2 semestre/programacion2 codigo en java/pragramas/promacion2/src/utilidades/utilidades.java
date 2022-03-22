@@ -10,6 +10,13 @@ import java.io.InputStreamReader;
  */
 public class utilidades {
 
+    /**
+     * lee una cadena de strings
+     *
+     * @param Pregunta
+     * @return
+     */
+
     public static String LeeCadena(String Pregunta) {
         BufferedReader consola = new BufferedReader(new InputStreamReader(System.in));
         System.out.println(Pregunta);
@@ -47,6 +54,11 @@ public class utilidades {
     }
 
     ;
+    /**
+     * lee un doble del la pregunta 
+     * @param Pregunta
+     * @return
+     */
 
     public static double leeDouble(String Pregunta) {
         String CadenaNumero = LeeCadena(Pregunta);
