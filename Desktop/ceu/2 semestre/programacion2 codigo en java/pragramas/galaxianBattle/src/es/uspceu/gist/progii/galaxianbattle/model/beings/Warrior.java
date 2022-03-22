@@ -74,7 +74,8 @@ public abstract class Warrior extends LivingCreature {
     }
 
     /**
-     * Notifies a new shot has been received. The warrior needs to check if it has been damaged by the shot.
+     * Notifies a new shot has been received. The warrior needs to check if it
+     * has been damaged by the shot.
      *
      * @param shot The shot (models the affected position).
      *
@@ -91,8 +92,7 @@ public abstract class Warrior extends LivingCreature {
             if (damageThreshold == 0) {
                 this.kill();
                 say("I'm dead! Position: " + shot);
-            }
-            else {
+            } else {
                 say("I'm hit! Position: " + shot);
             }
         }
@@ -119,7 +119,8 @@ public abstract class Warrior extends LivingCreature {
     }
 
     /**
-     * Chooses (randomly) the initial position for defending. Position is a random value between (0..MAX_POSITION).
+     * Chooses (randomly) the initial position for defending. Position is a
+     * random value between (0..MAX_POSITION).
      */
     private int choosePosition() {
         return getRandomPosition();
