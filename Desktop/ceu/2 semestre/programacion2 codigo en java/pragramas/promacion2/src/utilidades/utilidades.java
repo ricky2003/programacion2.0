@@ -16,7 +16,6 @@ public class utilidades {
      * @param Pregunta
      * @return
      */
-
     public static String LeeCadena(String Pregunta) {
         BufferedReader consola = new BufferedReader(new InputStreamReader(System.in));
         System.out.println(Pregunta);
@@ -43,11 +42,16 @@ public class utilidades {
      */
     public static int leeEntero(String Pregunta) {
         String CadenaNumero = LeeCadena(Pregunta);
-        int elNumero;
-        try {
-            elNumero = Integer.parseInt(CadenaNumero);
-        } catch (NumberFormatException nfe) {
-            elNumero = 0;
+        int elNumero = 0;
+        boolean incorrecto = true;
+        while (incorrecto) {
+            try {
+                elNumero = Integer.parseInt(CadenaNumero);
+                incorrecto = false;
+            } catch (NumberFormatException nfe) {
+                elNumero = 0;
+
+            }
         }
         return elNumero;
 
@@ -55,18 +59,22 @@ public class utilidades {
 
     ;
     /**
-     * lee un doble del la pregunta 
+     * lee un doble del la pregunta
      * @param Pregunta
      * @return
      */
 
     public static double leeDouble(String Pregunta) {
         String CadenaNumero = LeeCadena(Pregunta);
-        double elNumero;
-        try {
-            elNumero = Double.parseDouble(CadenaNumero);
-        } catch (NumberFormatException nfe) {
-            elNumero = 0;
+        double elNumero = 0;
+        boolean incorrecto = true;
+        while (incorrecto) {
+            try {
+                elNumero = Double.parseDouble(CadenaNumero);
+                incorrecto = false;
+            } catch (NumberFormatException nfe) {
+                elNumero = 0;
+            }
         }
         return elNumero;
 
