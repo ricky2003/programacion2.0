@@ -24,16 +24,25 @@ public class NumeroRacional {
      * @throws java.lang.Exception
      * @throws java.lang.Exception//para obligar a hacer un try cath
      */
-    public NumeroRacional(int numerador, int denominador) throws Exception {
+    //en los constructores poner todos los private
+    //si no te lo piden por paramrtros ponerlos tu
+    public NumeroRacional(int numerador, int denominador) throws DenominadorCeroException {
         if (denominador == 0) {
-            throw new Exception();
+            throw new DenominadorCeroException(1);
         }
         this.numerador = numerador;
         this.denominador = denominador;
 
     }
 
-    public NumeroRacional() throws Exception {
+    //esto es un constructor copia que te dice que
+    //el numerador del primero es el mimsmo que el numerador del segundo
+    //el denominador del primero es el misma que el denominador del segundo
+    public NumeroRacional(NumeroRacional r2) throws DenominadorCeroException {
+        this(r2.numerador, r2.denominador);
+    }
+
+    public NumeroRacional() throws DenominadorCeroException {
         this(1, 1);
     }
 
@@ -54,43 +63,63 @@ public class NumeroRacional {
         this.denominador = denominador;
     }
 
-    //metodos que te ayudaran ha hacer la simplificacion
-    public int mcm(int numerador, int denominador) {
-        return (numerador * denominador) / this.MaximoComunDivisor(numerador, denominador);
-    }//esta funcion se utilizaria en el caso de que quiras simplificar la suna pero en este ejercicios no te lo dicen
-
-    public int MaximoComunDivisor(int numerador, int denominador) {
-        int contador = 0;//servira para no perder el denominador
-        while (denominador != 0) {
-            contador = denominador;
-            denominador = numerador % denominador;
-            numerador = contador;
-        }
-        return numerador;
-    }
     //metodos importrantes
+    //podemos poner throws Exception o poner lo siguiete
+    public NumeroRacional suma(NumeroRacional r2) {
+        int numeradorComun = (this.getNumerador() * r2.getDenominador()) + (r2.getNumerador() * this.getDenominador());
+        int denominadorComun = (this.getDenominador() * r2.getDenominador());
+        NumeroRacional Resultadosuma = null;
 
-    public NumeroRacional suma(NumeroRacional r2) throws Exception {
-        NumeroRacional Resultadosuma = new NumeroRacional(this.getNumerador() * r2.getDenominador() + this.getDenominador() * r2.getNumerador(), this.getDenominador() * r2.getDenominador());
+        try {
+            Resultadosuma = new NumeroRacional(numeradorComun, denominadorComun);
 
+        } catch (DenominadorCeroException ex) {
+            System.out.println("el valor del denominador no pude ser 0");
+        }
         return Resultadosuma;
+
     }
 
-    public NumeroRacional mult(NumeroRacional r2) throws Exception {
+    public NumeroRacional mult(NumeroRacional r2) {
         int DenominadorComun = this.getDenominador() * r2.getDenominador();
         int NumeradorComun = this.getNumerador() * r2.getNumerador();
-        NumeroRacional resultadoProducto = new NumeroRacional(NumeradorComun, DenominadorComun);
+
+        NumeroRacional resultadoProducto = null;
+
+        try {
+            resultadoProducto = new NumeroRacional(NumeradorComun, DenominadorComun);
+
+        } catch (DenominadorCeroException ex) {
+            System.out.println("el valor del denominador no pude ser 0");
+        }
         return resultadoProducto;
+
     }
 
-    public NumeroRacional simplificar(NumeroRacional r2) throws Exception {
-        int mcd = this.MaximoComunDivisor(this.getNumerador(), this.getDenominador());
-        int NumeradorComun = this.getNumerador() / mcd;
-        int DenominadorComun = this.getDenominador() / mcd;
-        NumeroRacional resultadoSimplificado = new NumeroRacional(NumeradorComun, DenominadorComun);
+    public NumeroRacional simplificar(NumeroRacional r2) {
+
+        int NumeradorComun = this.numerador;
+        int DenominadorComun = this.denominador;
+        int menor = (this.denominador > this.numerador) ? this.denominador : this.numerador;
+        for (int i = menor; i > 1; i--) {
+            if ((NumeradorComun % i == 0) && (DenominadorComun % i == 0)) {
+                NumeradorComun = NumeradorComun / i;
+                DenominadorComun = DenominadorComun / i;
+            }
+        }
+        NumeroRacional resultadoSimplificado = null;
+        try {
+            resultadoSimplificado = new NumeroRacional(NumeradorComun, DenominadorComun);
+
+        } catch (DenominadorCeroException e) {
+            System.out.println("el valor del denominador no pude ser 0");
+        }
         return resultadoSimplificado;
 
     }
+    //forma de expresar otra calculadora
+    //((condicion)?(lo que se realiza si ocurre la condicion boolleana):
+    //(se pone lo que habria en el else);
 
     @Override
     public String toString() {

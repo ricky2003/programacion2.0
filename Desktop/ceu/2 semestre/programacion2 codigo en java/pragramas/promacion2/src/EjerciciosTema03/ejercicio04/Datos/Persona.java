@@ -69,6 +69,8 @@ public final class Persona extends DNI {
         this.edad = edad;
         this.nombre = nombre;
         this.Sexo(sexo.MUJER);
+        this.altura = 180;
+        this.peso = 70;
     }
 
     public Persona(int edad, int peso, int altura, String nombre) {
