@@ -18,77 +18,62 @@ package EjerciciosTema03.ejercicio04.Datos;
     • toString(): devuelve toda la información de la persona como una cadena de
     caracteres.
     • Métodos set de cada parámetro, excepto de DNI.
-    Crea una clase DNI, que deberá contener:
 
-    Un constructor con un número.
-    Un constructor con el número y la letra.
-    Un constructor con un String que contenga el número y la letra sin separación.
-    Un constructor por defecto que genere un DNI correcto.
-    La clase, además, deberá contener el método toString(), que ofrecerá una cadena de caracteres que representará el DNI.
-    Ahora, crea una clase ejecutable que haga lo siguiente:
-    • Pide por teclado el nombre, la edad, sexo, peso y altura.
-    • Crea 3 objetos de la clase anterior. El primer objeto obtendrá las anteriores variables pedidas por teclado, el segundo objeto obtendrá todos los anteriores menos el peso y la altura y el último por defecto, para este último
-    utiliza los métodos set para darle a los atributos un valor.
-    • Para cada objeto, se deberá comprobar si está en su peso ideal, tiene
-    sobrepeso o por debajo de su peso ideal con un mensaje.
-    • Indicar para cada objeto si es mayor de edad.
-    • Por último, mostrar la información de cada objeto.
  */
 /**
  *
  * @author Ricardo García-Villaraco<ricardo.garciavillaracosanchez@usp.ceu.es>
  */
-public final class Persona extends DNI {
+public final class Persona {
     //esto se denomina atributos.
 
     private int edad, peso;
     private int altura;//altura en centimetros
-    private int numeroDNI;
+    private DNI dni;
     private String nombre;
-    private String letraDNI;
-
-    private enum sexo {
-        HOMBRE, MUJER
-    }
-
-    private enum MasaCorporal {
-        PorDebajoDeSuPesoIdeal, PesoIdeal, SOBREPESO
-    }
+    private Sexo sexo;
 
     public Persona() {
         this.edad = 12;
-        this.numeroDNI = 0;
         this.peso = 50;
         this.altura = 170;
         this.nombre = null;
-        this.letraDNI = null;
-        this.Sexo(sexo.MUJER);
+        this.sexo = Sexo.MUJER;
+
     }
 
-    public Persona(int edad, String nombre) {
+    public Persona(int edad, String nombre, Sexo sexo) {
         this.edad = edad;
         this.nombre = nombre;
-        this.Sexo(sexo.MUJER);
+        this.sexo = sexo;
         this.altura = 180;
         this.peso = 70;
+
     }
 
     public Persona(int edad, int peso, int altura, String nombre) {
         this.edad = edad;
         this.nombre = nombre;
-        this.Sexo(sexo.MUJER);
+        this.sexo = Sexo.MUJER;
         this.peso = 50;
         this.altura = 170;
+
     }
 
-    public Persona(int edad, int peso, int altura, int numeroDNI, String nombre, String letraDNI) {
+    /**
+     *
+     * @param edad
+     * @param peso
+     * @param altura
+     * @param nombre
+     * @param sexo
+     */
+    public Persona(int edad, int peso, int altura, String nombre, Sexo sexo) {
         this.edad = edad;
         this.peso = peso;
         this.altura = altura;
-        this.numeroDNI = numeroDNI;
         this.nombre = nombre;
-        this.letraDNI = letraDNI;
-        this.Sexo(sexo.HOMBRE);
+        this.sexo = Sexo.HOMBRE;
     }
 
 //esto se denomina metodos .
@@ -106,11 +91,6 @@ public final class Persona extends DNI {
 
     String Nombre(String nombre) {
         return nombre;
-    }
-
-    sexo Sexo(sexo Hombre) {
-        return sexo.valueOf(nombre);
-
     }
 
     //GETTERS AND SETTERS
@@ -146,32 +126,53 @@ public final class Persona extends DNI {
         this.nombre = nombre;
     }
 
-    /**
-     *
-     * @return
-     */
+    public Sexo getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(Sexo hombre, Sexo mujer) {
+
+        this.sexo = hombre;
+        this.sexo = mujer;
+    }
+
     @Override
     public String toString() {
-        return "Persona =" + "edad:" + edad + ", peso:" + peso + ", altura:" + altura + ", nombre:" + nombre;
+        return "Persona: " + "edad=" + edad + ", peso=" + peso + ", altura=" + altura + ", DNIcompleto=" + dni + ", nombre=" + nombre + ", sexo= " + sexo;
     }
 
     //metodos importantes
-    //indice de la masa corporal de la poersona
-    public int calcularIMC(int imc) {
-        imc = this.peso * ((this.altura / 100) ^ 2);
-        return imc;
+    public int calcularIMC() {
+
+        int imc;
+        return imc = this.peso * ((this.altura / 100) ^ 2);
     }
 
-    public void ValorarPesoCorporal() {
+    public MasaCorporal ValorarPesoCorporal() {
+        MasaCorporal resultado = null;
         int imc = 0;
-        this.calcularIMC(imc);
+        imc = this.calcularIMC();
         if (imc > 25) {
-            //decir que tiene sobre peso
+            resultado = MasaCorporal.SOBREPESO;
+
         } else if (imc < 18) {
-            //por debajo de su peso ideal
+            resultado = MasaCorporal.PorDebajoDeSuPesoIdeal;
         } else {
-            //estan en su peso ideal
+            resultado = MasaCorporal.PesoIdeal;
         }
+        return resultado;
+    }
+
+    public boolean EsMayorDeEdad() {
+        boolean mayorEdad = false;
+        if (this.getEdad() >= 18) {
+            System.out.println("esta persona es mayor de edad");
+            mayorEdad = true;
+        } else {
+            System.out.println("la persona es mayor de edad");
+            mayorEdad = false;
+        }
+        return mayorEdad;
     }
 
 }
