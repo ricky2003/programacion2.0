@@ -40,7 +40,7 @@ public class utilidades {
      * @param Pregunta la pregunta ha realizar el usuario
      * @return entero leido o 0 si hubo error
      */
-    public static int leeEntero(String Pregunta) {
+    public static int LeeEntero(String Pregunta) {
         String CadenaNumero = LeeCadena(Pregunta);
         int elNumero = 0;
         boolean incorrecto = true;
@@ -64,7 +64,7 @@ public class utilidades {
      * @return
      */
 
-    public static double leeDouble(String Pregunta) {
+    public static double LeeDouble(String Pregunta) {
         String CadenaNumero = LeeCadena(Pregunta);
         double elNumero = 0;
         boolean incorrecto = true;

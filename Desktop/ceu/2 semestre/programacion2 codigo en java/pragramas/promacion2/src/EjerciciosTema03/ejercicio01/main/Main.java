@@ -1,6 +1,7 @@
 package EjerciciosTema03.ejercicio01.main;
 
 import EjerciciosTema03.ejercicio01.punto.Punto;
+import static utilidades.utilidades.*;
 
 /**
  *
@@ -9,9 +10,9 @@ import EjerciciosTema03.ejercicio01.punto.Punto;
 public class Main {
 
     public static void main(String[] args) {
-        double x = utilidades.utilidades.leeDouble("escribe un numero para la cordenada x");
-        double y = utilidades.utilidades.leeDouble("escribe un numero para la cordenada y");
-        double z = utilidades.utilidades.leeDouble("escribe un numero para la cordenada z");
+        double x = LeeDouble("escribe un numero para la cordenada x");
+        double y = LeeDouble("escribe un numero para la cordenada y");
+        double z = LeeDouble("escribe un numero para la cordenada z");
         // se hace con nada dentro para mostrar ek que es por defecto
         Punto punto0 = new Punto();
         Punto punto1 = new Punto(x, y, z);

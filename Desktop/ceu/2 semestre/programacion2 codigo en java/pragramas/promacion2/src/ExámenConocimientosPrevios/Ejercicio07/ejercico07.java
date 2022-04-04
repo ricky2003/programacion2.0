@@ -9,9 +9,9 @@ import utilidades.utilidades;
 public class ejercico07 {
 
     public static float multiplicacionReales(float resultado) {
-        float numero1 = (float) utilidades.leeDouble("escriba el primer numero= ");
+        float numero1 = (float) utilidades.LeeDouble("escriba el primer numero= ");
         System.out.println("el numero es :" + numero1);
-        float numero2 = (float) utilidades.leeDouble("escriba el segundo numero= ");
+        float numero2 = (float) utilidades.LeeDouble("escriba el segundo numero= ");
         System.out.println("el numero es :" + numero2);
         resultado = numero1 * numero2;
         return resultado;

@@ -12,9 +12,7 @@ package EjerciciosTema03.ejercicio04.Datos;
     La clase deberá tener los siguientes métodos:
     • calcularIMC(): calcula el índice de masa corporal de la persona. La fórmula es la siguiente: peso/(altura^2). La altura deberá estar especificada en metros y el peso en kilogramos.
     • valorarPesoCorporal() devolverá un enumerado que indique si el individuo está por debajo de su peso ideal, en su peso ideal o tiene sobrepeso. Sobrepeso se define como IMC > 25 y se considera que se está por debajo del peso ideal si IMC <18.
-    • esMayorDeEdad()
-
-    : indica si es mayor de edad, devuelve un booleano.
+    • esMayorDeEdad(): indica si es mayor de edad, devuelve un booleano.
     • toString(): devuelve toda la información de la persona como una cadena de
     caracteres.
     • Métodos set de cada parámetro, excepto de DNI.
@@ -143,9 +141,8 @@ public final class Persona {
 
     //metodos importantes
     public int calcularIMC() {
-
-        int imc;
-        return imc = this.peso * ((this.altura / 100) ^ 2);
+        int imc = this.peso * ((this.altura / 100) ^ 2);
+        return imc;
     }
 
     public MasaCorporal ValorarPesoCorporal() {
@@ -156,9 +153,9 @@ public final class Persona {
             resultado = MasaCorporal.SOBREPESO;
 
         } else if (imc < 18) {
-            resultado = MasaCorporal.PorDebajoDeSuPesoIdeal;
+            resultado = MasaCorporal.POR_DEBAJO_DE_SU_PESO_IDEAL;
         } else {
-            resultado = MasaCorporal.PesoIdeal;
+            resultado = MasaCorporal.PESO_IDEAL;
         }
         return resultado;
     }
@@ -166,10 +163,9 @@ public final class Persona {
     public boolean EsMayorDeEdad() {
         boolean mayorEdad = false;
         if (this.getEdad() >= 18) {
-            System.out.println("esta persona es mayor de edad");
+
             mayorEdad = true;
         } else {
-            System.out.println("la persona es mayor de edad");
             mayorEdad = false;
         }
         return mayorEdad;

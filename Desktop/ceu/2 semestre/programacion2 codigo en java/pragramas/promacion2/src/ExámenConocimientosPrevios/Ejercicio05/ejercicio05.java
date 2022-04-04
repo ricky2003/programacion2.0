@@ -32,7 +32,7 @@ public class ejercicio05 {
     ;
 
     public static void main(String[] args) {
-        int numero = utilidades.leeEntero("introduce un numero: ");
+        int numero = utilidades.LeeEntero("introduce un numero: ");
         System.out.println("El numero es :" + numero);
         System.out.println("El numero es primo :" + esPrimo(numero));
 

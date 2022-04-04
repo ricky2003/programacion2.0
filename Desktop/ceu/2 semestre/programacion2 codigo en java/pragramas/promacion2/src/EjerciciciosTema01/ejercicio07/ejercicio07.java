@@ -7,7 +7,7 @@ package EjerciciciosTema01.ejercicio07;
 public class ejercicio07 {
 
     public static int factoreprimos(int factoresprimos) {
-        int n = utilidades.utilidades.leeEntero("esctribe un numero");
+        int n = utilidades.utilidades.LeeEntero("esctribe un numero");
         System.out.print(n + ":");
         while (n != 1) {
             if (n % factoresprimos == 0) {

@@ -2,6 +2,7 @@ package EjerciciosTema03.ejercicio03.CalculadoraRacionales;
 
 import EjerciciosTema03.ejercicio03.NumeroRacional.DenominadorCeroException;
 import EjerciciosTema03.ejercicio03.NumeroRacional.NumeroRacional;
+import static utilidades.utilidades.*;
 
 /**
  *
@@ -22,10 +23,10 @@ public class Main {
         Boolean correcto = false;
         NumeroRacional resultado = null;
 
-        int numerador = utilidades.utilidades.leeEntero("introduzca el numerador");
+        int numerador = LeeEntero("introduzca el numerador");
         int denominador = 1;
         while (!correcto) {
-            denominador = utilidades.utilidades.leeEntero("introduzca el denominador");
+            denominador = LeeEntero("introduzca el denominador");
             try {
 
                 resultado = new NumeroRacional(numerador, denominador);
@@ -53,7 +54,7 @@ public class Main {
             System.out.println("        3.simplifica el racional al maximo");
             System.out.println("        4.para poder salir");
             System.out.println("\n\n");
-            int opcion = utilidades.utilidades.leeEntero("escribe la opcion que quires");
+            int opcion = LeeEntero("escribe la opcion que quires: ");
             switch (opcion) {
 
                 case 1://suma
