@@ -1,9 +1,9 @@
-package EjerciciosTema03.ejercicio03.CalculadoraRacionales;
+package EjerciciosTema03.ejercicio04.Main;
 
 /**
  *
  * @author Ricardo García-Villaraco<ricardo.garciavillaracosanchez@usp.ceu.es>
  */
-class Racional {
-
+public enum Errores {
+    LETRA, NUMERO
 }

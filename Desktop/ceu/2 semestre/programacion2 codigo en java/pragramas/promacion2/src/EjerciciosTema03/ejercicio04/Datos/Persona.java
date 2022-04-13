@@ -1,5 +1,8 @@
 package EjerciciosTema03.ejercicio04.Datos;
 
+import EjerciciosTema03.ejercicio04.Main.DNIException;
+import EjerciciosTema03.ejercicio04.Main.Errores;
+
 /*Haz una clase llamada Persona con atributos
     nombre , edad, DNI, sexo (usa un enumerado
     ), peso y altura.Crea métodos para acceder y modificar todos los atributos(excepto el DNI).
@@ -31,30 +34,50 @@ public final class Persona {
     private String nombre;
     private Sexo sexo;
 
-    public Persona() {
+    /**
+     *
+     */
+    public Persona() throws DNIException {
         this.edad = 12;
         this.peso = 50;
         this.altura = 170;
         this.nombre = null;
         this.sexo = Sexo.MUJER;
+        try {
+            DNI DNI = new DNI();
+        } catch (Exception dnie) {
+            throw new DNIException(Errores.NUMERO);
+
+        }
 
     }
 
-    public Persona(int edad, String nombre, Sexo sexo) {
+    public Persona(int edad, String nombre, Sexo sexo) throws DNIException {
         this.edad = edad;
         this.nombre = nombre;
         this.sexo = sexo;
         this.altura = 180;
         this.peso = 70;
 
+        try {
+            DNI DNI = new DNI(135792468, 'D');
+        } catch (Exception dnie) {
+            throw new DNIException(Errores.NUMERO);
+        }
+
     }
 
-    public Persona(int edad, int peso, int altura, String nombre) {
+    public Persona(int edad, int peso, int altura, String nombre) throws DNIException {
         this.edad = edad;
         this.nombre = nombre;
         this.sexo = Sexo.MUJER;
         this.peso = 50;
         this.altura = 170;
+        try {
+            DNI DNI = new DNI(246813579, 'B');
+        } catch (Exception dnie) {
+            throw new DNIException(Errores.NUMERO);
+        }
 
     }
 
@@ -65,13 +88,19 @@ public final class Persona {
      * @param altura
      * @param nombre
      * @param sexo
+     * @param dni
      */
-    public Persona(int edad, int peso, int altura, String nombre, Sexo sexo) {
+    public Persona(int edad, int peso, int altura, String nombre, Sexo sexo, DNI dni) {
         this.edad = edad;
         this.peso = peso;
         this.altura = altura;
         this.nombre = nombre;
-        this.sexo = Sexo.HOMBRE;
+        this.sexo = sexo;
+        try {
+            this.dni = dni;
+        } catch (Exception dnie) {
+            System.out.println("es un dni invalido");
+        }
     }
 
 //esto se denomina metodos .
