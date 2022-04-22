@@ -1,6 +1,6 @@
 package practicaprograii.ModeloJuego.Juego.Jugador;
 
-import practicaprograii.Dificultades.dificultades;
+import practicaprograii.ModeloJuego.Juego.Dificultades.dificultades;
 import practicaprograii.ModeloJuego.Juego.Dinosaurios.*;
 import practicaprograii.ModeloJuego.Juego.Islas.Crianza.Sorna;
 import practicaprograii.ModeloJuego.Juego.Islas.Exhibicion.*;

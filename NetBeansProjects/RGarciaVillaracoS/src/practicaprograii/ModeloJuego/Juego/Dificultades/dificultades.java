@@ -1,4 +1,4 @@
-package practicaprograii.Dificultades;
+package practicaprograii.ModeloJuego.Juego.Dificultades;
 
 /**
  *
