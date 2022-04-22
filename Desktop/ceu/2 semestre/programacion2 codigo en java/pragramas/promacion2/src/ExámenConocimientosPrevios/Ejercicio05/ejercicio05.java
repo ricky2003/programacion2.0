@@ -4,7 +4,7 @@ package ExámenConocimientosPrevios.Ejercicio05;
  *
  * @author Ricardo García-Villaraco<ricardo.garciavillaracosanchez@usp.ceu.es>
  */
-import utilidades.utilidades;
+import practicaprograii.ModeloJuego.Juego.utilidades.utilidades;
 
 public class ejercicio05 {
 

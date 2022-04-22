@@ -1,6 +1,6 @@
 package holamundo;
 
-import utilidades.utilidades;
+import practicaprograii.ModeloJuego.Juego.utilidades.utilidades;
 
 /**
  *

@@ -1,6 +1,6 @@
 package ExámenConocimientosPrevios.Ejercicio07;
 
-import utilidades.utilidades;
+import practicaprograii.ModeloJuego.Juego.utilidades.utilidades;
 
 /**
  *

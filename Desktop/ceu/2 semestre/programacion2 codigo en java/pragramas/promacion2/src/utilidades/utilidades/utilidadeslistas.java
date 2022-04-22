@@ -1,4 +1,4 @@
-package utilidades;
+package practicaprograii.ModeloJuego.Juego.utilidades;
 
 import java.util.ArrayList;
 
