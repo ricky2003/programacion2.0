@@ -1,17 +1,17 @@
 package practicaprograii.ModeloJuego.Juego.Islas.Crianza;
 
+import practicaprograii.ModeloJuego.Juego.Islas.Islas;
+import practicaprograii.ModeloJuego.Juego.NivelADquisitivo.NivelAdquisitivo;
+
 /**
  *
  * @author Ricardo García-Villaraco<ricardo.garciavillaracosanchez@usp.ceu.es>
  */
-public class Sorna {
+public class Sorna extends Islas {
 
-    private final int Hectareas;
-    private final int Alimento;
+    public Sorna(int Alimento, int Hectareas, int Visitantes, NivelAdquisitivo NivelAdquisitivo) {
+        super(0, 0, 0, NivelAdquisitivo.LA_NADA);
 
-    public Sorna(String Alimentos, String Actividad, int Hectareas) {
-        this.Alimento = 20000;
-        this.Hectareas = 5000;
     }
 
 }
