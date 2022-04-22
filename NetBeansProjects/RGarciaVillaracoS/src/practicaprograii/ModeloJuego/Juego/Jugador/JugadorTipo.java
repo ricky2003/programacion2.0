@@ -28,15 +28,6 @@ public class JugadorTipo {
     //centro de mando y el hsitorico
     //no se me ocurre como hacerlo
 
-    public JugadorTipo(String Alias, dificultades Dificultad, Sorna Crianza, Nublar Exhibicion1, Velocirraptor DinosaurioFavorito, int monedasQueTienes) {
-        this.Alias = Alias;
-        this.Dificultad = Dificultad;
-        this.Crianza = Crianza;
-        this.Exhibicion1 = Exhibicion1;
-        this.DinosaurioFavorito3 = DinosaurioFavorito;
-        this.monedasQueTieneas = monedasQueTienes;
-    }
-
     public JugadorTipo(String Alias, Sorna Sorna, SanDiego SanDiego, Velocirraptor velocirraptor) {
         this.Alias = Alias;
         this.Dificultad = dificultades.EXPLORADOR;
