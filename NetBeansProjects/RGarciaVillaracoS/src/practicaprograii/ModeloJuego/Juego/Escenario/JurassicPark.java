@@ -1,7 +1,7 @@
 package practicaprograii.ModeloJuego.Juego.Escenario;
 
 import practicaprograii.ModeloJuego.Juego.Islas.Exhibicion.Nublar;
-import practicaprograii.ModeloJuego.Juego.JugadorTipo.JugadorTipo;
+import practicaprograii.ModeloJuego.Juego.Jugador.JugadorTipo;
 
 /**
  *
