@@ -1,8 +1,5 @@
 package practicaprograii.ModeloJuego.Juego.Escenario;
 
-import practicaprograii.ModeloJuego.Juego.Islas.Exhibicion.Nublar;
-import practicaprograii.ModeloJuego.Juego.Jugador.JugadorTipo;
-
 /**
  *
  * @author Ricardo García-Villaraco<ricardo.garciavillaracosanchez@usp.ceu.es>
@@ -10,8 +7,7 @@ import practicaprograii.ModeloJuego.Juego.Jugador.JugadorTipo;
 public class JurassicPark {
 
     private int monedas;
-    private Nublar IslaNublar;
-    private JugadorTipo JugadorQueLaUtiliza;
+    //private int visitantes ;
 
     public JurassicPark(int monedas) {
         this.monedas = monedas;

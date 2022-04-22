@@ -1,7 +1,6 @@
 package practicaprograii.ModeloJuego.Juego.Escenario;
 
 import practicaprograii.ModeloJuego.Juego.Islas.Exhibicion.Matanceros;
-import practicaprograii.ModeloJuego.Juego.Jugador.JugadorTipo;
 
 /**
  *
@@ -10,12 +9,10 @@ import practicaprograii.ModeloJuego.Juego.Jugador.JugadorTipo;
 public class JurassicWorld {
 
     private int monedas;
-    private Matanceros IslaDeCrianza;
-    private JugadorTipo JugadorQueLaUtiliza;
+    //private int visitantes;
 
     public JurassicWorld(int monedas, Matanceros Matanceros) {
         this.monedas = monedas;
-        this.IslaDeCrianza = Matanceros;
 
     }
 
