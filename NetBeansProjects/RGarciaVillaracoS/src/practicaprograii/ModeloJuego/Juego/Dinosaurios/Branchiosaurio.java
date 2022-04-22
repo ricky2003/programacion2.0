@@ -1,5 +1,6 @@
 package practicaprograii.ModeloJuego.Juego.Dinosaurios;
 
+import practicaprograii.ModeloJuego.Juego.Jugador.JugadorTipo;
 import practicaprograii.ModeloJuego.Juego.Tipo.TipoAlimentacion;
 import practicaprograii.ModeloJuego.Juego.Tipo.TipoMedio;
 
@@ -7,21 +8,17 @@ import practicaprograii.ModeloJuego.Juego.Tipo.TipoMedio;
  *
  * @author Ricardo García-Villaraco<ricardo.garciavillaracosanchez@usp.ceu.es>
  */
-public class Branchiosaurio {
+public class Branchiosaurio extends Dinosaurio {
 
     private int Id;
     private TipoMedio TipoMedio;
     private TipoAlimentacion TipoAlimentacion;
     private int EdadActual, EdadQueSeHaceAdulto/*va por meses*/, NivelDESalud, NumeroDeFavoritos;
+    private JugadorTipo JugadorTipo;
 
-    public Branchiosaurio(int Id, TipoMedio TipoMedio, TipoAlimentacion TipoAlimentacion, int EdadActual, int EdadQueSeHaceAdulto, int NivelDESalud, int NumeroDeFavoritos) {
-        this.Id = Id;
-        this.TipoMedio = TipoMedio.TERRESTRE;
-        this.TipoAlimentacion = TipoAlimentacion.HERBIVORO;
-        this.EdadActual = 0;
-        this.EdadQueSeHaceAdulto = 12;
-        this.NivelDESalud = 100;
-        this.NumeroDeFavoritos = 0;
+    public Branchiosaurio(int Id, TipoMedio TipoMedio, TipoAlimentacion TipoAlimentacion, int EdadActual, int EdadQueSeHaceAdulto, int NivelDESalud, int NumeroDeFavoritos, JugadorTipo JugadorTipo) {
+        super(Id, TipoMedio.TERRESTRE, TipoAlimentacion.HERBIVORO, 0, 12, 100, 0, JugadorTipo);
+
     }
 
     /**
@@ -33,7 +30,7 @@ public class Branchiosaurio {
      */
     public int IngenIDAleatorio(int numeroAleatorio) {
         numeroAleatorio = this.Id;
-        numeroAleatorio = (int) Math.random() * 100000000;
+        numeroAleatorio = (int) (Math.random() * 100000000);
         return numeroAleatorio;
 
     }

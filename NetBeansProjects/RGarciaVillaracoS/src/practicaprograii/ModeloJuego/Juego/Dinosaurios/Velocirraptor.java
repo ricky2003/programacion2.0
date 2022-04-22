@@ -1,5 +1,6 @@
 package practicaprograii.ModeloJuego.Juego.Dinosaurios;
 
+import practicaprograii.ModeloJuego.Juego.Jugador.JugadorTipo;
 import practicaprograii.ModeloJuego.Juego.Tipo.TipoAlimentacion;
 import practicaprograii.ModeloJuego.Juego.Tipo.TipoMedio;
 
@@ -7,21 +8,17 @@ import practicaprograii.ModeloJuego.Juego.Tipo.TipoMedio;
  *
  * @author Ricardo García-Villaraco<ricardo.garciavillaracosanchez@usp.ceu.es>
  */
-public class Velocirraptor {
+public class Velocirraptor extends Dinosaurio {
 
     private int Id;
     private TipoMedio TipoMedio;
     private TipoAlimentacion TipoAlimentacion;
     private int EdadActual, EdadQueSeHaceAdulto/*va por meses*/, NivelDESalud, NumeroDeFavoritos;
+    private JugadorTipo JugadorTipo;
 
-    public Velocirraptor(int Id, TipoMedio TipoMedio, TipoAlimentacion TipoAlimentacion, int EdadActual, int EdadQueSeHaceAdulto, int NivelDESalud, int NumeroDeFavoritos) {
-        this.Id = Id;
-        this.TipoMedio = TipoMedio.TERRESTRE;
-        this.TipoAlimentacion = TipoAlimentacion.CARNIVORO;
-        this.EdadActual = 0;
-        this.EdadQueSeHaceAdulto = 38;
-        this.NivelDESalud = 100;
-        this.NumeroDeFavoritos = 0;
+    public Velocirraptor(int Id, JugadorTipo JugadorTipo, TipoMedio TipoMedio, TipoAlimentacion TipoAlimentacion, int EdadActual, int EdadQueSeHaceAdulto, int NivelDESalud, int NumeroDeFavoritos) {
+        super(Id, TipoMedio.TERRESTRE, TipoAlimentacion.CARNIVORO, 0, 38, 100, 0, JugadorTipo);
+
     }
 
     /**

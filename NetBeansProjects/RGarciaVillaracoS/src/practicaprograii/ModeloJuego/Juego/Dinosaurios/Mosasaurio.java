@@ -8,7 +8,7 @@ import practicaprograii.ModeloJuego.Juego.Tipo.TipoMedio;
  *
  * @author Ricardo García-Villaraco<ricardo.garciavillaracosanchez@usp.ceu.es>
  */
-public class Mosasaurio {
+public class Mosasaurio extends Dinosaurio {
 
     private int Id;
     private TipoMedio TipoMedio;
@@ -16,14 +16,9 @@ public class Mosasaurio {
     private int EdadActual, EdadQueSeHaceAdulto/*va por meses*/, NivelDESalud, NumeroDeFavoritos;
     private JugadorTipo JugadorTipo;
 
-    public Mosasaurio(int Id, TipoMedio TipoMedio, TipoAlimentacion TipoAlimentacion, int EdadActual, int EdadQueSeHaceAdulto, int NivelDESalud, int NumeroDeFavoritos) {
-        this.Id = Id;
-        this.TipoMedio = TipoMedio.ACUATICO;
-        this.TipoAlimentacion = TipoAlimentacion.CARNIVORO;
-        this.EdadActual = 0;
-        this.EdadQueSeHaceAdulto = 42;
-        this.NivelDESalud = 100;
-        this.NumeroDeFavoritos = 0;
+    public Mosasaurio(int Id, JugadorTipo JugadorTipo, TipoMedio TipoMedio, TipoAlimentacion TipoAlimentacion, int EdadActual, int EdadQueSeHaceAdulto, int NivelDESalud, int NumeroDeFavoritos) {
+        super(Id, TipoMedio.ACUATICO, TipoAlimentacion.CARNIVORO, 0, 42, 100, 0, JugadorTipo);
+
     }
 
     /**

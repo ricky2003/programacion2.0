@@ -1,5 +1,6 @@
 package practicaprograii.ModeloJuego.Juego.Dinosaurios;
 
+import practicaprograii.ModeloJuego.Juego.Jugador.JugadorTipo;
 import practicaprograii.ModeloJuego.Juego.Tipo.TipoAlimentacion;
 import practicaprograii.ModeloJuego.Juego.Tipo.TipoMedio;
 
@@ -7,14 +8,16 @@ import practicaprograii.ModeloJuego.Juego.Tipo.TipoMedio;
  *
  * @author Ricardo García-Villaraco<ricardo.garciavillaracosanchez@usp.ceu.es>
  */
-public class Pteranodon {
+public class Pteranodon extends Dinosaurio {
 
     private int Id;
     private TipoMedio TipoMedio;
     private TipoAlimentacion TipoAlimentacion;
     private int EdadActual, EdadQueSeHaceAdulto/*va por meses*/, NivelDESalud, NumeroDeFavoritos;
+    private JugadorTipo JugadorTipo;
 
-    public Pteranodon(int Id, TipoMedio TipoMedio, TipoAlimentacion TipoAlimentacion, int EdadActual, int EdadQueSeHaceAdulto, int NivelDESalud, int NumeroDeFavoritos) {
+    public Pteranodon(int Id, TipoMedio TipoMedio, JugadorTipo JugadorTipo, TipoAlimentacion TipoAlimentacion, int EdadActual, int EdadQueSeHaceAdulto, int NivelDESalud, int NumeroDeFavoritos) {
+        super(Id, TipoMedio.VOLADOR, TipoAlimentacion.CARNIVORO, 0, 16, 100, 0, JugadorTipo);
         this.Id = Id;
         this.TipoMedio = TipoMedio.VOLADOR;
         this.TipoAlimentacion = TipoAlimentacion.CARNIVORO;
