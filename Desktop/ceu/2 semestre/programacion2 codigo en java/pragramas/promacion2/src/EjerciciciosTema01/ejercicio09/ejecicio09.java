@@ -7,12 +7,12 @@ package EjerciciciosTema01.ejercicio09;
 public class ejecicio09 {
 
     public static int prductoEscalar(int producto) {
-        int x1 = utilidades.utilidades.LeeEntero("escribe el vaor de la cordenada x del vector 1");
-        int y1 = utilidades.utilidades.LeeEntero("escribe el vaor de la cordenada y del vector 1");
-        int z1 = utilidades.utilidades.LeeEntero("escribe el vaor de la cordenada z del vector 1");
-        int x2 = utilidades.utilidades.LeeEntero("escribe el vaor de la cordenada x del vector 2");
-        int y2 = utilidades.utilidades.LeeEntero("escribe el vaor de la cordenada y del vector 2");
-        int z2 = utilidades.utilidades.LeeEntero("escribe el vaor de la cordenada z del vector 3");
+        int x1 = practicaprograii.ModeloJuego.Juego.utilidades.utilidades.LeeEntero("escribe el vaor de la cordenada x del vector 1");
+        int y1 = practicaprograii.ModeloJuego.Juego.utilidades.utilidades.LeeEntero("escribe el vaor de la cordenada y del vector 1");
+        int z1 = practicaprograii.ModeloJuego.Juego.utilidades.utilidades.LeeEntero("escribe el vaor de la cordenada z del vector 1");
+        int x2 = practicaprograii.ModeloJuego.Juego.utilidades.utilidades.LeeEntero("escribe el vaor de la cordenada x del vector 2");
+        int y2 = practicaprograii.ModeloJuego.Juego.utilidades.utilidades.LeeEntero("escribe el vaor de la cordenada y del vector 2");
+        int z2 = practicaprograii.ModeloJuego.Juego.utilidades.utilidades.LeeEntero("escribe el vaor de la cordenada z del vector 3");
         producto = x1 * x2 + y1 * y2 + z1 * z2;
         return producto;
     }

@@ -1,6 +1,5 @@
 package EjerciciciosTema01.utilidades;
 
-import utilidades.*;
 import EjerciciciosTema01.ejercicio06.*;
 import java.io.BufferedReader;
 import java.io.IOException;

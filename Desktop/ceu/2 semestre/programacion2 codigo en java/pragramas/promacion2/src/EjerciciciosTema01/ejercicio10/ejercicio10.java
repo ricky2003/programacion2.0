@@ -28,7 +28,7 @@ public class ejercicio10 {
     }
 
     public static void main(String[] args) {
-        int numero = utilidades.utilidades.LeeEntero("escribe el tamano de la matriz cuadrada ");
+        int numero = practicaprograii.ModeloJuego.Juego.utilidades.utilidades.LeeEntero("escribe el tamano de la matriz cuadrada ");
         int[][] matrizNumeros = new int[numero][numero];
         inicializarMatriz(matrizNumeros);
         visualizarMatriz(matrizNumeros);
