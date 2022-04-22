@@ -2,7 +2,7 @@ package EjerciciosTema03.ejercicio03.CalculadoraRacionales;
 
 import EjerciciosTema03.ejercicio03.NumeroRacional.DenominadorCeroException;
 import EjerciciosTema03.ejercicio03.NumeroRacional.NumeroRacional;
-import static utilidades.utilidades.*;
+import static practicaprograii.ModeloJuego.Juego.utilidades.utilidades.*;
 
 /**
  *

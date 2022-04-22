@@ -18,7 +18,7 @@ import EjerciciosTema03.ejercicio05.Contraseña.Contraseña;
 public class Main {
 
     public static void main(String[] args) {
-        int dimension = utilidades.utilidades.LeeEntero("escribe un numero para la longitud");
+        int dimension = practicaprograii.ModeloJuego.Juego.utilidades.utilidades.LeeEntero("escribe un numero para la longitud");
         Contraseña ArrayPaswords[] = new Contraseña[dimension];
         Contraseña ArrayBooleano[] = new Contraseña[dimension];
 

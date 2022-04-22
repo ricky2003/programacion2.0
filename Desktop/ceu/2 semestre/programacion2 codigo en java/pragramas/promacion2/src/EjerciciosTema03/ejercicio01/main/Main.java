@@ -1,7 +1,7 @@
 package EjerciciosTema03.ejercicio01.main;
 
 import EjerciciosTema03.ejercicio01.punto.Punto;
-import static utilidades.utilidades.*;
+import static practicaprograii.ModeloJuego.Juego.utilidades.utilidades.*;
 
 /**
  *

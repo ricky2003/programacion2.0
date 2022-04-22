@@ -4,7 +4,7 @@ import EjerciciosTema03.ejercicio04.Datos.DNI;
 import EjerciciosTema03.ejercicio04.Datos.MasaCorporal;
 import EjerciciosTema03.ejercicio04.Datos.Persona;
 import EjerciciosTema03.ejercicio04.Datos.Sexo;
-import static utilidades.utilidades.*;
+import static practicaprograii.ModeloJuego.Juego.utilidades.utilidades.*;
 
 /**
  * Ahora, crea una clase ejecutable que haga lo siguiente: • Pide por teclado el
