@@ -1,29 +1,17 @@
 package practicaprograii.ModeloJuego.Juego.Escenario;
 
+import practicaprograii.ModeloJuego.Juego.Islas.Crianza.Sorna;
+import practicaprograii.ModeloJuego.Juego.Islas.Exhibicion.SanDiego;
+
 /**
  *
  * @author Ricardo García-Villaraco<ricardo.garciavillaracosanchez@usp.ceu.es>
  */
-public class JurassicParkSanDiego {
+public class JurassicParkSanDiego extends Escenario {
 
-    private int monedas;
     //private int visitantes;
-
-    public JurassicParkSanDiego(int monedas) {
-        this.monedas = monedas;
+    public JurassicParkSanDiego(Sorna sorna, SanDiego sanDiego) {
+        super(50000, sorna, sanDiego);
     }
 
-    public int getMonedas() {
-        return monedas;
-    }
-
-    public void setMonedas(int monedas) {
-        this.monedas = monedas;
-    }
-
-    public int QuitarMonedas(int monedasQuitadas) {
-        monedasQuitadas = this.monedas;
-        monedasQuitadas = 50000;
-        return monedasQuitadas;
-    }
 }

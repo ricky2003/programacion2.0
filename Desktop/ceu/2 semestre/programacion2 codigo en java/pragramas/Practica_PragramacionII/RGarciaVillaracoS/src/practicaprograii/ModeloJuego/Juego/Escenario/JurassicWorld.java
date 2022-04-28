@@ -1,32 +1,17 @@
 package practicaprograii.ModeloJuego.Juego.Escenario;
 
+import practicaprograii.ModeloJuego.Juego.Islas.Crianza.Sorna;
 import practicaprograii.ModeloJuego.Juego.Islas.Exhibicion.Matanceros;
 
 /**
  *
  * @author Ricardo García-Villaraco<ricardo.garciavillaracosanchez@usp.ceu.es>
  */
-public class JurassicWorld {
+public class JurassicWorld extends Escenario {
 
-    private int monedas;
-    //private int visitantes;
+    public JurassicWorld(Sorna sorna, Matanceros matanceros) {
+        super(150000, sorna, matanceros);
 
-    public JurassicWorld(int monedas, Matanceros Matanceros) {
-        this.monedas = monedas;
-
-    }
-
-    public int MonedasQuitadas(int MonedasQuitadas) {
-        MonedasQuitadas = 150000;
-        return MonedasQuitadas;
-    }
-
-    public int getMonedas() {
-        return monedas;
-    }
-
-    public void setMonedas(int monedas) {
-        this.monedas = monedas;
     }
 
 }
