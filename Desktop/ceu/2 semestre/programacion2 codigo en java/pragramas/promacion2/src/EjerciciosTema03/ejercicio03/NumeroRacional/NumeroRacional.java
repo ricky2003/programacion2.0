@@ -1,5 +1,7 @@
 package EjerciciosTema03.ejercicio03.NumeroRacional;
 
+import java.io.Serializable;
+
 /**
  *
  * Crear una clase que represente un número racional que permita, al menos,
@@ -12,7 +14,7 @@ package EjerciciosTema03.ejercicio03.NumeroRacional;
  *
  * @author Ricardo García-Villaraco<ricardo.garciavillaracosanchez@usp.ceu.es>
  */
-public class NumeroRacional {
+public class NumeroRacional implements Serializable {
 
     private int numerador;
     private int denominador;
@@ -123,7 +125,7 @@ public class NumeroRacional {
 
     @Override
     public String toString() {
-        return "Fraccion= " + numerador + "/" + denominador;
+        return " " + numerador + "/" + denominador;
     }
 
 }
