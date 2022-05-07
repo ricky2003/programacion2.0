@@ -9,12 +9,14 @@ import practicaprograii.ModeloJuego.Juego.Islas.Exhibicion.IslaExhibicion;
  */
 public class Escenario {
 
-    private final int monedas;
-    private final IslaCrianza islaCrianza;
-    private final IslaExhibicion islaExhibicion;
+    private int monedasIniciales;
+    private int VisitantesIniciales;
+    private IslaCrianza islaCrianza;
+    private IslaExhibicion islaExhibicion;
 
-    public Escenario(int monedas, IslaCrianza islaCrianza, IslaExhibicion islaExhibicion) {
-        this.monedas = monedas;
+    public Escenario(int monedas, int Visitantes, IslaCrianza islaCrianza, IslaExhibicion islaExhibicion) {
+        this.VisitantesIniciales = Visitantes;
+        this.monedasIniciales = monedas;
         this.islaCrianza = islaCrianza;
         this.islaExhibicion = islaExhibicion;
     }

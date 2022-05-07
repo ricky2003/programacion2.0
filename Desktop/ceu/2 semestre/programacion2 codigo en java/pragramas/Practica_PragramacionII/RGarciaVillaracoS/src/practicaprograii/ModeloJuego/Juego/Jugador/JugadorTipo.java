@@ -1,5 +1,6 @@
 package practicaprograii.ModeloJuego.Juego.Jugador;
 
+import practicaprograii.ModeloJuego.Juego.CuadroDeMandos.CuadroDeMandos;
 import practicaprograii.ModeloJuego.Juego.Islas.Crianza.IslaCrianza;
 import practicaprograii.ModeloJuego.Juego.Islas.Exhibicion.*;
 
@@ -9,10 +10,12 @@ import practicaprograii.ModeloJuego.Juego.Islas.Exhibicion.*;
  */
 public class JugadorTipo {
 
-    private final String Alias;
-    private final IslaCrianza Crianza;
-    private final IslaExhibicion Exhibicion;
-    private final int monedasQueTieneas;
+    private String Alias;
+    private IslaCrianza Crianza;
+    private IslaExhibicion Exhibicion;
+    private int monedasQueTieneas;
+    private CuadroDeMandos CuadroDeMandos;
+    //private final CuadrodeMados DashBoard;
 
     //centro de mando y el hsitorico
     //no se me ocurre como hacerlo

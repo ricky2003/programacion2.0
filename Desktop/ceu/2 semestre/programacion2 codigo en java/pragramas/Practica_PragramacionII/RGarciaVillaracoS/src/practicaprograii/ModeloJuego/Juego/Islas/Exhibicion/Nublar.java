@@ -8,8 +8,8 @@ import practicaprograii.ModeloJuego.Juego.NivelADquisitivo.NivelAdquisitivo;
  */
 public class Nublar extends IslaExhibicion {
 
-    public Nublar() {
-        super(7700, 10000, 1000, NivelAdquisitivo.ALTO);
+    public Nublar(int UnidadAlimento) {
+        super(7700, 10000, 1000, UnidadAlimento, NivelAdquisitivo.ALTO);
     }
 
 }

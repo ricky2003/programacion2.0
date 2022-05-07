@@ -10,7 +10,7 @@ import practicaprograii.ModeloJuego.Juego.Islas.Exhibicion.Nublar;
 public class JurassicPark extends Escenario {
 
     public JurassicPark(Sorna sorna, Nublar nublar) {
-        super(100000, sorna, nublar);
+        super(0, 100000, sorna, nublar);
     }
 
 }

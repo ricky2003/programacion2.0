@@ -10,7 +10,7 @@ import practicaprograii.ModeloJuego.Juego.Islas.Exhibicion.Matanceros;
 public class JurassicWorld extends Escenario {
 
     public JurassicWorld(Sorna sorna, Matanceros matanceros) {
-        super(150000, sorna, matanceros);
+        super(150000, 0, sorna, matanceros);
 
     }
 

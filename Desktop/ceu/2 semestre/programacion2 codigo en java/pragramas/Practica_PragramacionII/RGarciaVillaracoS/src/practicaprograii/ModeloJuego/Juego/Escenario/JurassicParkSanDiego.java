@@ -11,7 +11,7 @@ public class JurassicParkSanDiego extends Escenario {
 
     //private int visitantes;
     public JurassicParkSanDiego(Sorna sorna, SanDiego sanDiego) {
-        super(50000, sorna, sanDiego);
+        super(50000, 0, sorna, sanDiego);
     }
 
 }

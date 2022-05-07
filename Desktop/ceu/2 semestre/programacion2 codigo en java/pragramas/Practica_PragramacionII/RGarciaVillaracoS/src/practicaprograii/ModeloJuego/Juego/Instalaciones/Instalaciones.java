@@ -13,21 +13,20 @@ import practicaprograii.ModeloJuego.Juego.Tipo.TipoRecinto;
  */
 public class Instalaciones {
 
-    private final int costeDeContruccion;
-    private final int unidadesDeAlimentacion;
-    private final int numerosDeEjemplares;
-    private final int hectareas;
-    private final TipoInstalacion tipoInstalacion;
-    private final TipoRecinto tipoRecinto;
-    private final TipoMedio tipoMedio;
-    public final TipoAlimentacion tipoDeAlimentacion;
-    private final List<Dinosaurio> poblacion;
+    private int costeDeContruccion;
+    private int unidadesDeAlimentacion;
+    private int numerosDeEjemplares;
+    private int hectareas;
+    private TipoInstalacion tipoInstalacion;
+    private TipoRecinto tipoRecinto;
+    private TipoMedio tipoMedio;
+    private TipoAlimentacion tipoDeAlimentacion;
+    private List<Dinosaurio> poblacion;
 
     public Instalaciones(int CosteDeContruccion, int UnidadesDeAlimentacion, int NumerosDeEjemplares, int Hectareas, TipoRecinto TipoRecinto, TipoMedio TipoMedio, TipoAlimentacion TipoDeAlimentacion, TipoInstalacion tipoInstalacion) {
         this.tipoInstalacion = tipoInstalacion;
         this.costeDeContruccion = CosteDeContruccion;
         this.unidadesDeAlimentacion = UnidadesDeAlimentacion;
-        this.numerosDeEjemplares = NumerosDeEjemplares;
         this.hectareas = Hectareas;
         this.tipoRecinto = TipoRecinto;
         this.tipoMedio = TipoMedio;

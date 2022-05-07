@@ -8,8 +8,9 @@ import practicaprograii.ModeloJuego.Juego.NivelADquisitivo.NivelAdquisitivo;
  */
 public class SanDiego extends IslaExhibicion {
 
-    public SanDiego() {
-        super(100, 5000, 2000, NivelAdquisitivo.ALTO);
+    public SanDiego(int UnidadAlimento) {
+        super(100, 5000, 2000, UnidadAlimento, NivelAdquisitivo.ALTO
+        );
     }
 
 }

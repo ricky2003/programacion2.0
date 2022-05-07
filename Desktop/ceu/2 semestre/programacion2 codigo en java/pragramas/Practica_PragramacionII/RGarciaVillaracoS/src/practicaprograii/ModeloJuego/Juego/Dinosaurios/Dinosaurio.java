@@ -10,16 +10,16 @@ import practicaprograii.ModeloJuego.Juego.Tipo.TipoMedio;
  * @author Ricardo García-Villaraco<ricardo.garciavillaracosanchez@usp.ceu.es>
  */
 public class Dinosaurio {
-//variables en minus;
+//variables en minusculas;
 
-    private final int id;
-    private final TipoMedio tipoMedio;
-    private final TipoAlimentacion tipoAlimentacion;
-    private final int edadActual;
-    private final int edadQueSeHaceAdulto/*va por meses*/;
-    private final int nivelDESalud;
-    private final int numeroDeFavoritos;
-    private final JugadorTipo jugadorTipo;
+    private int id;
+    private TipoMedio tipoMedio;
+    private TipoAlimentacion tipoAlimentacion;
+    private int edadActual;
+    private int edadQueSeHaceAdulto/*va por meses*/;
+    public int nivelDESalud;
+    private int numeroDeFavoritos;
+    private JugadorTipo jugadorTipo;
 
     public Dinosaurio(TipoMedio TipoMedio, TipoAlimentacion TipoAlimentacion, int EdadActual, int EdadQueSeHaceAdulto, int NivelDESalud, int NumeroDeFavoritos, JugadorTipo JugadorTipo) {
         this.id = IngenIDAleatorio();
@@ -35,8 +35,8 @@ public class Dinosaurio {
     public int IngenIDAleatorio() {
         Random random = new Random();
 
-        int numeroAleatorio = random.nextInt(Integer.MAX_VALUE);
-        return numeroAleatorio;
+        this.id = random.nextInt(Integer.MAX_VALUE);
+        return this.id;
 
     }
 

@@ -2,6 +2,7 @@ package practicaprograii.ModeloJuego.Juego.Dinosaurios.Carnivoros;
 
 import practicaprograii.ModeloJuego.Juego.Dinosaurios.Dinosaurio;
 import practicaprograii.ModeloJuego.Juego.Jugador.JugadorTipo;
+import practicaprograii.ModeloJuego.Juego.Tipo.TipoAlimentacion;
 import practicaprograii.ModeloJuego.Juego.Tipo.TipoMedio;
 
 /**
@@ -10,13 +11,8 @@ import practicaprograii.ModeloJuego.Juego.Tipo.TipoMedio;
  */
 public class Carnivoros extends Dinosaurio {
 
-    private int nivelDESalud;
-    private TipoMedio tipoMedio;
-    private JugadorTipo jugadorTipo;
-
-    public Carnivoros(TipoMedio TipoMedio, JugadorTipo JugadorTipo) {
-        this.tipoMedio = TipoMedio;
-        this.jugadorTipo = JugadorTipo;
+    public Carnivoros(TipoMedio TipoMedio, int EdadActual, int EdadQueSeHaceAdulto, int NumeroDeFavoritos, JugadorTipo JugadorTipo) {
+        super(TipoMedio, TipoAlimentacion.CARNIVORO, EdadActual, EdadQueSeHaceAdulto, 100, NumeroDeFavoritos, JugadorTipo);
 
     }
 }

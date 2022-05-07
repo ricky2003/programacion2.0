@@ -8,8 +8,8 @@ import practicaprograii.ModeloJuego.Juego.NivelADquisitivo.NivelAdquisitivo;
  */
 public class Matanceros extends IslaExhibicion {
 
-    public Matanceros() {
-        super(25000, 10000, 3000, NivelAdquisitivo.MEDIO);
+    public Matanceros(int MovimientoAlimento) {
+        super(25000, 10000, 3000, MovimientoAlimento, NivelAdquisitivo.MEDIO);
 
     }
 

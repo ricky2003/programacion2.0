@@ -1,7 +1,6 @@
 package practicaprograii.ModeloJuego.Juego.Islas.Crianza;
 
 import practicaprograii.ModeloJuego.Juego.Islas.Islas;
-import practicaprograii.ModeloJuego.Juego.NivelADquisitivo.NivelAdquisitivo;
 
 /**
  *
@@ -9,8 +8,8 @@ import practicaprograii.ModeloJuego.Juego.NivelADquisitivo.NivelAdquisitivo;
  */
 public class IslaCrianza extends Islas {
 
-    public IslaCrianza(int Alimento, int Hectareas, int Visitantes, NivelAdquisitivo NivelAdquisitivo) {
-        super(Alimento, Hectareas, Visitantes, NivelAdquisitivo);
+    public IslaCrianza(int UnidadAlimento, int movimientoAlimento, int Hectareas) {
+        super(UnidadAlimento, Hectareas, movimientoAlimento);
     }
 
 }
