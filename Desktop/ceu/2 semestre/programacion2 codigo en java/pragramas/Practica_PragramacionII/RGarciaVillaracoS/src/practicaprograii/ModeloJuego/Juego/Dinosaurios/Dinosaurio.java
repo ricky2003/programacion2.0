@@ -1,6 +1,6 @@
 package practicaprograii.ModeloJuego.Juego.Dinosaurios;
 
-import java.util.Random;
+import practicaprograii.ModeloJuego.Juego.Entidad;
 import practicaprograii.ModeloJuego.Juego.Jugador.JugadorTipo;
 import practicaprograii.ModeloJuego.Juego.Tipo.TipoAlimentacion;
 import practicaprograii.ModeloJuego.Juego.Tipo.TipoMedio;
@@ -9,10 +9,9 @@ import practicaprograii.ModeloJuego.Juego.Tipo.TipoMedio;
  *
  * @author Ricardo García-Villaraco<ricardo.garciavillaracosanchez@usp.ceu.es>
  */
-public class Dinosaurio {
+public class Dinosaurio extends Entidad {
 //variables en minusculas;
 
-    private int id;
     private TipoMedio tipoMedio;
     private TipoAlimentacion tipoAlimentacion;
     private int edadActual;
@@ -22,7 +21,7 @@ public class Dinosaurio {
     private JugadorTipo jugadorTipo;
 
     public Dinosaurio(TipoMedio TipoMedio, TipoAlimentacion TipoAlimentacion, int EdadActual, int EdadQueSeHaceAdulto, int NivelDESalud, int NumeroDeFavoritos, JugadorTipo JugadorTipo) {
-        this.id = IngenIDAleatorio();
+        super();//este super te da el id del dinosaurio ;
         this.tipoMedio = TipoMedio;
         this.tipoAlimentacion = TipoAlimentacion;
         this.edadActual = EdadActual;
@@ -30,14 +29,6 @@ public class Dinosaurio {
         this.nivelDESalud = NivelDESalud;
         this.numeroDeFavoritos = NumeroDeFavoritos;
         this.jugadorTipo = JugadorTipo;
-    }
-
-    public int IngenIDAleatorio() {
-        Random random = new Random();
-
-        this.id = random.nextInt(Integer.MAX_VALUE);
-        return this.id;
-
     }
 
     public int edadMensual() {

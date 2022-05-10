@@ -1,7 +1,6 @@
 package practicaprograii.ModeloJuego.Juego.Islas.Exhibicion;
 
 import java.util.Random;
-import practicaprograii.ModeloJuego.Juego.Dinosaurios.Dinosaurio;
 import practicaprograii.ModeloJuego.Juego.Islas.Islas;
 import practicaprograii.ModeloJuego.Juego.NivelADquisitivo.NivelAdquisitivo;
 
@@ -16,7 +15,6 @@ public class IslaExhibicion extends Islas {
     private int VisitantesDeSalida;
     private int VisitantesAlMes;
     private NivelAdquisitivo nivelAdquisitivo;
-    private Dinosaurio InstanciasDinosaurio;
 
     public IslaExhibicion(int Alimento, int movimientoAlimento, int Hectareas, int VisitantesMaximos, NivelAdquisitivo NivelAdquisitivo) {
 

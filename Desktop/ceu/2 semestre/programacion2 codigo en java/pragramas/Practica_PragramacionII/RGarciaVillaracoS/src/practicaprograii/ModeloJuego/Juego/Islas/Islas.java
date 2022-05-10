@@ -1,20 +1,26 @@
 package practicaprograii.ModeloJuego.Juego.Islas;
 
+import practicaprograii.ModeloJuego.Juego.Entidad;
+
 /**
  *
  * @author Ricardo García-Villaraco<ricardo.garciavillaracosanchez@usp.ceu.es>
  */
-public class Islas extends Alimento {
+public class Islas extends Entidad {
 
     public int UnidadAlimento;
     public int MovimientosAlimento;
+    public int moendad_Por_Unida_de_Alimento;
     public int hectareas;
+    //private ArrayList<Intalacion> InstalacionesDeLaIsla;
 
-    //private List<Dinosaurio> DinosauriosIsla;
     public Islas(int UnidadAlimento, int hectareas, int MovimietosAlimento) {
-        super(UnidadAlimento, MovimietosAlimento);
+        super();//este super te da el id del jugador ;
+        this.UnidadAlimento = UnidadAlimento;
+        this.moendad_Por_Unida_de_Alimento = 5;
+        this.MovimientosAlimento = MovimietosAlimento;
         this.hectareas = hectareas;
-        //DinosauriosIsla = new DinosauriosIsla();
+        //this.InstalacionesDeLaIsla = new ArrayList();
     }
 
     public int UnidadesDeAlimento() {
