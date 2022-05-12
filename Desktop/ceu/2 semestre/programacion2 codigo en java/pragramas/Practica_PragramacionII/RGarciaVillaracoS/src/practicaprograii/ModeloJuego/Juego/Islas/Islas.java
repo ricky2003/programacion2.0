@@ -1,6 +1,6 @@
 package practicaprograii.ModeloJuego.Juego.Islas;
 
-import practicaprograii.ModeloJuego.Juego.Entidad;
+import practicaprograii.ModeloJuego.Juego.Entidad.Entidad;
 
 /**
  *

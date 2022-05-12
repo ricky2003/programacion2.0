@@ -10,7 +10,7 @@ import practicaprograii.ModeloJuego.Juego.Tipo.TipoMedio;
 public class Mosasaurio extends Carnivoros {
 
     public Mosasaurio(JugadorTipo JugadorTipo) {
-        super(TipoMedio.ACUATICO, 0, 42, 0, JugadorTipo);
+        super(TipoMedio.ACUATICO, 0, 42, 0, 10, JugadorTipo);
 
     }
 

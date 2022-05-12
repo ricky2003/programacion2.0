@@ -1,6 +1,6 @@
 package practicaprograii.ModeloJuego.Juego.partida;
 
-import practicaprograii.ModeloJuego.Juego.Entidad;
+import practicaprograii.ModeloJuego.Juego.Entidad.Entidad;
 import practicaprograii.ModeloJuego.Juego.Escenario.Escenario;
 import practicaprograii.ModeloJuego.Juego.Jugador.JugadorTipo;
 

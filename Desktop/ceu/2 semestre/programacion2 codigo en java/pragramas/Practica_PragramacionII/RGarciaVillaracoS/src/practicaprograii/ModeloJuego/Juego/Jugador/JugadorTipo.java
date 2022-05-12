@@ -1,7 +1,7 @@
 package practicaprograii.ModeloJuego.Juego.Jugador;
 
 import practicaprograii.ModeloJuego.Juego.CuadroDeMandos.CuadrodDeMandos;
-import practicaprograii.ModeloJuego.Juego.Entidad;
+import practicaprograii.ModeloJuego.Juego.Entidad.Entidad;
 import practicaprograii.ModeloJuego.Juego.Islas.Crianza.IslaCrianza;
 import practicaprograii.ModeloJuego.Juego.Islas.Exhibicion.*;
 

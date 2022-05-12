@@ -10,7 +10,7 @@ import practicaprograii.ModeloJuego.Juego.Tipo.TipoMedio;
 public class Velocirraptor extends Carnivoros {
 
     public Velocirraptor(JugadorTipo JugadorTipo) {
-        super(TipoMedio.TERRESTRE, 0, 38, 0, JugadorTipo);
+        super(TipoMedio.TERRESTRE, 0, 38, 0, 8, JugadorTipo);
 
     }
 

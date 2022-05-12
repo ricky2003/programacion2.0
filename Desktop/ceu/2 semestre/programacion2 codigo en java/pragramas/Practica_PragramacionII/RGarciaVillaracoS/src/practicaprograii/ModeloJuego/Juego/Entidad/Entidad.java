@@ -1,4 +1,4 @@
-package practicaprograii.ModeloJuego.Juego;
+package practicaprograii.ModeloJuego.Juego.Entidad;
 
 /**
  *

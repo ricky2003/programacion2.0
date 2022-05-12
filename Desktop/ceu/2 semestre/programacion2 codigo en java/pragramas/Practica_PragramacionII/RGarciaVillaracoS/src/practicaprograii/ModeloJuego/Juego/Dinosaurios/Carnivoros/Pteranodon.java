@@ -10,7 +10,7 @@ import practicaprograii.ModeloJuego.Juego.Tipo.TipoMedio;
 public class Pteranodon extends Carnivoros {
 
     public Pteranodon(JugadorTipo JugadorTipo) {
-        super(TipoMedio.VOLADOR, 0, 16, 0, JugadorTipo);
+        super(TipoMedio.VOLADOR, 0, 16, 0, 2, JugadorTipo);
 
     }
 }

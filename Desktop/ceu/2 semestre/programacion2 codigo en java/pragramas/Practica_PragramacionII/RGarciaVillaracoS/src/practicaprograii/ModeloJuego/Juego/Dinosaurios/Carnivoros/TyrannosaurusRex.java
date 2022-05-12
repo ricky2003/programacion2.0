@@ -10,7 +10,7 @@ import practicaprograii.ModeloJuego.Juego.Tipo.TipoMedio;
 public class TyrannosaurusRex extends Carnivoros {
 
     public TyrannosaurusRex(JugadorTipo JugadorTipo) {
-        super(TipoMedio.TERRESTRE, 0, 24, 0, JugadorTipo);
+        super(TipoMedio.TERRESTRE, 0, 24, 0, 5, JugadorTipo);
 
     }
 

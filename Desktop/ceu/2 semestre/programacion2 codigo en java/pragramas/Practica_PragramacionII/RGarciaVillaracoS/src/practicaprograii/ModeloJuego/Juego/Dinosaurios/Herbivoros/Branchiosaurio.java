@@ -10,7 +10,7 @@ import practicaprograii.ModeloJuego.Juego.Tipo.TipoMedio;
 public class Branchiosaurio extends Herbivoros {
 
     public Branchiosaurio(JugadorTipo JugadorTipo) {
-        super(TipoMedio.TERRESTRE, 0, 12, 0, JugadorTipo);
+        super(TipoMedio.TERRESTRE, 0, 12, 0, 2, JugadorTipo);
 
     }
 
