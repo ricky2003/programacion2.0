@@ -2,6 +2,7 @@ package practicaprograii.ModeloJuego.Juego.Dinosaurios;
 
 import practicaprograii.ModeloJuego.Juego.Entidad.Entidad;
 import practicaprograii.ModeloJuego.Juego.Instalaciones.TipoInstalacion;
+import practicaprograii.ModeloJuego.Juego.Islas.Exhibicion.IslaExhibicion;
 import practicaprograii.ModeloJuego.Juego.Jugador.JugadorTipo;
 import practicaprograii.ModeloJuego.Juego.Tipo.TipoAlimentacion;
 import practicaprograii.ModeloJuego.Juego.Tipo.TipoMedio;
@@ -37,13 +38,66 @@ public class Dinosaurio extends Entidad {
         this.Apetito = Apetito;
     }
 
-    public int edadMensual() {
-        int edad;
-        edad = this.edadActual;
-        for (int i = 0; i <= this.edadQueSeHaceAdulto; i++) {
-            edad = edad + 1;
-        }
-        return edad;
+    public TipoMedio getTipoMedio() {
+        return tipoMedio;
+    }
+
+    public void setTipoMedio(TipoMedio tipoMedio) {
+        this.tipoMedio = tipoMedio;
+    }
+
+    public TipoAlimentacion getTipoAlimentacion() {
+        return tipoAlimentacion;
+    }
+
+    public void setTipoAlimentacion(TipoAlimentacion tipoAlimentacion) {
+        this.tipoAlimentacion = tipoAlimentacion;
+    }
+
+    public int getCantidadAlimento() {
+        return CantidadAlimento;
+    }
+
+    public void setCantidadAlimento(int CantidadAlimento) {
+        this.CantidadAlimento = CantidadAlimento;
+    }
+
+    public int getEdadActual() {
+        return edadActual;
+    }
+
+    public void setEdadActual(int edadActual) {
+        this.edadActual = edadActual;
+    }
+
+    public int getApetito() {
+        return Apetito;
+    }
+
+    public void setApetito(int Apetito) {
+        this.Apetito = Apetito;
+    }
+
+    public int getEdadQueSeHaceAdulto() {
+        return edadQueSeHaceAdulto;
+    }
+
+    public void setEdadQueSeHaceAdulto(int edadQueSeHaceAdulto) {
+        this.edadQueSeHaceAdulto = edadQueSeHaceAdulto;
+    }
+
+    public int getNivelDESalud() {
+        return nivelDESalud;
+    }
+
+    public void setNivelDESalud(int nivelDESalud) {
+        this.nivelDESalud = nivelDESalud;
+    }
+
+    public void edadMensual() {
+
+        this.edadActual++;
+
     }
 
     public int Apetito() {
@@ -67,9 +121,33 @@ public class Dinosaurio extends Entidad {
         return salud;
     }
 
-    public int Favorito() {
-        int fav = 0;
-        fav = fav + this.numeroDeFavoritos;
+    public int IncremetarFavorito() {
+        return this.numeroDeFavoritos++;
+    }
+
+    public int getValormedio() {
+        int delta = 0;
+
+        if (null != this.getTipoMedio()) {
+            switch (this.getTipoMedio()) {
+                case ACUATICO:
+                    delta = 5;
+                    break;
+                case TERRESTRE:
+                    delta = 15;
+                    break;
+                case VOLADOR:
+                    delta = 25;
+                    break;
+                default:
+                    break;
+            }
+        }
+        return delta;
+    }
+
+    public int fav(IslaExhibicion IE) {
+        int fav = 10 * this.getEdadQueSeHaceAdulto() * (this.getNivelDESalud() / 100) * IE.ValorAdquisitivo();
         return fav;
     }
 

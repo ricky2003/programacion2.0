@@ -12,4 +12,8 @@ public class IslaCrianza extends Islas {
         super(UnidadAlimento, Hectareas, movimientoAlimento);
     }
 
+    /* public void eliminaDinosaurio(Dinosaurio d) {
+        d--;
+
+    }*/
 }

@@ -26,6 +26,34 @@ public class IslaExhibicion extends Islas {
 
     }
 
+    public NivelAdquisitivo getNivelAdquisitivo() {
+        return nivelAdquisitivo;
+    }
+
+    public void setNivelAdquisitivo(NivelAdquisitivo nivelAdquisitivo) {
+        this.nivelAdquisitivo = nivelAdquisitivo;
+    }
+
+    public int ValorAdquisitivo() {
+        int fi = 0;
+        if (null != this.nivelAdquisitivo) {
+            switch (this.nivelAdquisitivo) {
+                case BAJO:
+                    fi = 1;
+                    break;
+                case MEDIO:
+                    fi = 15;
+                    break;
+                case ALTO:
+                    fi = 30;
+                    break;
+                default:
+                    break;
+            }
+        }
+        return fi;
+    }
+
     public int Visitantes_al_mes() {
         Random numeroRandom = new Random();
         this.VisitantesAlMes = numeroRandom.nextInt(Integer.MAX_VALUE);
