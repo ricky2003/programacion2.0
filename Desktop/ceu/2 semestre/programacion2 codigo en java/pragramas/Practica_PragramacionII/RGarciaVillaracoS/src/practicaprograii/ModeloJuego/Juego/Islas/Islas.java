@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import practicaprograii.ModeloJuego.Juego.Dinosaurios.Dinosaurio;
 import practicaprograii.ModeloJuego.Juego.Entidad.Entidad;
 import practicaprograii.ModeloJuego.Juego.Instalaciones.Instalacion;
+import practicaprograii.ModeloJuego.Juego.Instalaciones.Secreta.Secreta;
 
 /**
  *
@@ -16,6 +17,7 @@ public class Islas extends Entidad {
     public int moendad_Por_Unida_de_Alimento;
     public int hectareas;
     private ArrayList<Instalacion> InstalacionesDeLaIsla;
+    private ArrayList<Instalacion> InstalacionesDeLaSecreta;
 
     public Islas(int UnidadAlimento, int hectareas, int MovimietosAlimento) {
         super();//este super te da el id del jugador ;
@@ -23,7 +25,8 @@ public class Islas extends Entidad {
         this.moendad_Por_Unida_de_Alimento = 5;
         this.MovimientosAlimento = MovimietosAlimento;
         this.hectareas = hectareas;
-        //this.InstalacionesDeLaIsla = new ArrayList();
+        this.InstalacionesDeLaIsla = new ArrayList();
+        this.InstalacionesDeLaSecreta = new ArrayList();
     }
 
     public int UnidadesDeAlimento() {
@@ -34,12 +37,34 @@ public class Islas extends Entidad {
         return this.MovimientosAlimento = this.UnidadAlimento / 4;
     }
 
-    public void añadirIstalacion() {
-        //forEach;
-        for (Instalacion i : this.InstalacionesDeLaIsla) {
-            this.InstalacionesDeLaIsla.add(i);
-        }
+    public void añadirIstalacion(Instalacion i) {
 
+        this.InstalacionesDeLaIsla.add(i);
+
+    }
+
+    public void ElimnacionIsntalcion(Instalacion I) {
+        this.InstalacionesDeLaIsla.remove(I);
+    }
+
+    public boolean existeDinosaurio(Instalacion I) {
+        return this.InstalacionesDeLaIsla.contains(I);
+    }
+
+    public boolean hayHuecoenisla() {
+        return this.InstalacionesDeLaIsla.size() < 4;
+    }
+
+    public void ElimnacionIsntalcion(Secreta Is) {
+        this.InstalacionesDeLaIsla.remove(Is);
+    }
+
+    public boolean existeDinosaurio(Secreta Is) {
+        return this.InstalacionesDeLaIsla.contains(Is);
+    }
+
+    public boolean hayHuecoensecreta() {
+        return this.InstalacionesDeLaIsla.size() < 4;
     }
 
     public int DonacionFav(Dinosaurio d) {

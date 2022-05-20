@@ -21,11 +21,18 @@ public class Partida extends Entidad {
         this.FinPartida = FinPartida;
     }
 
-    public boolean Final_de_la_patdia() {
+    public boolean FinalPardia() {
         if (this.FinPartida = true) {
             System.out.println("la partida ha terminado");
         }
         return this.FinPartida;
+    }
+
+    public void SeleccionEscenario(Escenario e) {
+
+        int numero = 0;
+        System.out.println("escribe un numero= " + numero);
+
     }
 
 }

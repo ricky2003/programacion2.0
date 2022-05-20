@@ -12,7 +12,7 @@ import practicaprograii.ModeloJuego.Juego.Tipo.TipoMedio;
 public class Herbivoros extends Dinosaurio {
 
     public Herbivoros(TipoMedio TipoMedio, int EdadActual, int EdadQueSeHaceAdulto, int NumeroDeFavoritos, int Apetito, JugadorTipo JugadorTipo) {
-        super(TipoMedio, TipoAlimentacion.HERBIVORO, EdadActual, EdadQueSeHaceAdulto, 100, NumeroDeFavoritos, Apetito, JugadorTipo);
+        super(TipoMedio, TipoAlimentacion.HERBIVORO, EdadActual, EdadQueSeHaceAdulto, NumeroDeFavoritos, Apetito, JugadorTipo);
 
     }
 

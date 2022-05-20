@@ -18,32 +18,43 @@ public class Instalacion extends Entidad {
     private int costeDeContruccion;
     private int unidadesAlimentacion;
     private int hectareas;
-    private TipoInstalacion tipoInstalacion;
     private TipoRecinto tipoRecinto;
     private TipoMedio tipoMedio;
     private TipoAlimentacion tipoDeAlimentacion;
-    private ArrayList<Dinosaurio> DinosauriosDeInsatalacion;
+    private ArrayList<Dinosaurio> DinosauriosDeInsatalacion = new ArrayList();
+    private int numerodinosaurio;
 
-    public Instalacion(int CosteDeContruccion, int alimento, int Hectareas, TipoRecinto TipoRecinto, TipoMedio TipoMedio, TipoAlimentacion TipoDeAlimentacion, TipoInstalacion tipoInstalacion) {
+    public Instalacion(int CosteDeContruccion, int numeroDinosaurio, int alimento, int Hectareas, TipoRecinto TipoRecinto, TipoMedio TipoMedio, TipoAlimentacion TipoDeAlimentacion) {
         super();//este super te da el id del jugador ;
-        this.tipoInstalacion = tipoInstalacion;
         this.costeDeContruccion = CosteDeContruccion;
         this.hectareas = Hectareas;
         this.tipoRecinto = TipoRecinto;
+        this.numerodinosaurio = numeroDinosaurio;
         this.tipoMedio = TipoMedio;
         this.tipoDeAlimentacion = TipoDeAlimentacion;
         this.unidadesAlimentacion = alimento;
         this.moendad_Por_Unida_de_Alimento = 5;
-        this.DinosauriosDeInsatalacion = new ArrayList();
 
     }
 
-    public void añadirDinosaurio() {
-        //forEach;
-        for (Dinosaurio d : this.DinosauriosDeInsatalacion) {
-            this.DinosauriosDeInsatalacion.add(d);
-        }
+    public void ElimnacionDinosaurio(Dinosaurio d) {
+        this.DinosauriosDeInsatalacion.remove(d);
+    }
 
+    public void añadirDinosaurio(Dinosaurio d) {
+        this.DinosauriosDeInsatalacion.add(d);
+    }
+
+    public boolean existeDinosaurio(Dinosaurio d) {
+        return this.DinosauriosDeInsatalacion.contains(d);
+    }
+
+    public boolean hayHueco() {
+        return this.DinosauriosDeInsatalacion.size() < this.numerodinosaurio;
+    }
+
+    public boolean Full() {
+        return this.DinosauriosDeInsatalacion.size() < this.numerodinosaurio;
     }
 
 }

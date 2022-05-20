@@ -1,7 +1,8 @@
 package practicaprograii.ModeloJuego.Juego.Instalaciones.Cria;
 
+import practicaprograii.ModeloJuego.Juego.Dinosaurios.Dinosaurio;
+import practicaprograii.ModeloJuego.Juego.Instalaciones.Exhibicion.Exhibicion;
 import practicaprograii.ModeloJuego.Juego.Instalaciones.Instalacion;
-import practicaprograii.ModeloJuego.Juego.Instalaciones.TipoInstalacion;
 import practicaprograii.ModeloJuego.Juego.Tipo.TipoAlimentacion;
 import practicaprograii.ModeloJuego.Juego.Tipo.TipoMedio;
 import practicaprograii.ModeloJuego.Juego.Tipo.TipoRecinto;
@@ -12,20 +13,21 @@ import practicaprograii.ModeloJuego.Juego.Tipo.TipoRecinto;
  */
 public class Cria extends Instalacion {
 
-    private int numeroDeEjemplares;
-
-    public Cria(int CosteDeContruccion, int numerosDeEjemplares, int alimento, int Hectareas, TipoRecinto TipoRecinto, TipoMedio TipoMedio, TipoAlimentacion TipoDeAlimentacion, TipoInstalacion tipoInstalacion) {
-        super(CosteDeContruccion, alimento, Hectareas, TipoRecinto, TipoMedio, TipoDeAlimentacion, tipoInstalacion);
-        this.numeroDeEjemplares = numerosDeEjemplares;
+    public Cria(int CosteDeContruccion, int numerosDeEjemplares, int alimento, int Hectareas, TipoRecinto TipoRecinto, TipoMedio TipoMedio, TipoAlimentacion TipoDeAlimentacion) {
+        super(CosteDeContruccion, numerosDeEjemplares, alimento, Hectareas, TipoRecinto, TipoMedio, TipoDeAlimentacion);
     }
 
-    public int Nacimento() {
-        //no esta terminado mirar los apuntes
-        int i = 0;
-        if (i < this.numeroDeEjemplares) {
-            i++;
+    public void trasladaDinosaurio(Dinosaurio d, Exhibicion ie) {
+        if (this.existeDinosaurio(d)) {
+            if (ie.hayHueco()) {
+                ie.añadirDinosaurio(d);
+                this.ElimnacionDinosaurio(d);
+            } else {
+                //excepcion
+            }
+        } else {
+            //excepcion
         }
-        return i;
+        //Si esta miro si hay sitio en exhibicion si es asi lo muevo (lo quito de esta instalacion y lo anado en exhibicion.
     }
-
 }

@@ -1,8 +1,6 @@
 package practicaprograii.ModeloJuego.Juego.Dinosaurios;
 
 import practicaprograii.ModeloJuego.Juego.Entidad.Entidad;
-import practicaprograii.ModeloJuego.Juego.Instalaciones.TipoInstalacion;
-import practicaprograii.ModeloJuego.Juego.Islas.Exhibicion.IslaExhibicion;
 import practicaprograii.ModeloJuego.Juego.Jugador.JugadorTipo;
 import practicaprograii.ModeloJuego.Juego.Tipo.TipoAlimentacion;
 import practicaprograii.ModeloJuego.Juego.Tipo.TipoMedio;
@@ -20,22 +18,35 @@ public class Dinosaurio extends Entidad {
     private int edadActual;
     private int Apetito;
     private int edadQueSeHaceAdulto/*va por meses*/;
-    public int nivelDESalud;
+    private int nivelDeSalud;
     private int numeroDeFavoritos;
     private JugadorTipo jugadorTipo;
-    private TipoInstalacion tipoInstalacion;
 
-    public Dinosaurio(TipoMedio TipoMedio, TipoAlimentacion TipoAlimentacion, int EdadActual, int EdadQueSeHaceAdulto, int NivelDESalud, int NumeroDeFavoritos, int Apetito, JugadorTipo JugadorTipo) {
+    public Dinosaurio(TipoMedio TipoMedio, TipoAlimentacion TipoAlimentacion, int EdadActual, int EdadQueSeHaceAdulto, int NumeroDeFavoritos, int Apetito, JugadorTipo JugadorTipo) {
         super();//este super te da el id del dinosaurio ;
         this.tipoMedio = TipoMedio;
         this.tipoAlimentacion = TipoAlimentacion;
         this.edadActual = EdadActual;
         this.edadQueSeHaceAdulto = EdadQueSeHaceAdulto;
-        this.nivelDESalud = NivelDESalud;
+        this.nivelDeSalud = 100;
         this.numeroDeFavoritos = NumeroDeFavoritos;
         this.jugadorTipo = JugadorTipo;
-        this.CantidadAlimento = 100;//no se como hacer variar este parametro ;
+        this.CantidadAlimento = 100;
         this.Apetito = Apetito;
+    }
+
+    public Dinosaurio() {
+        super();//este super te da el id del dinosaurio ;
+        this.tipoMedio = TipoMedio.ACUATICO;
+        this.tipoAlimentacion = TipoAlimentacion.CARNIVORO;
+        this.edadActual = 23;
+        this.edadQueSeHaceAdulto = 40;
+        this.nivelDeSalud = 100;
+        this.numeroDeFavoritos = 2;
+        this.jugadorTipo = null;
+        this.CantidadAlimento = 100;
+        this.Apetito = 25;
+
     }
 
     public TipoMedio getTipoMedio() {
@@ -86,17 +97,33 @@ public class Dinosaurio extends Entidad {
         this.edadQueSeHaceAdulto = edadQueSeHaceAdulto;
     }
 
-    public int getNivelDESalud() {
-        return nivelDESalud;
+    public int getNivelDeSalud() {
+        return nivelDeSalud;
     }
 
-    public void setNivelDESalud(int nivelDESalud) {
-        this.nivelDESalud = nivelDESalud;
+    public void setNivelDeSalud(int nivelDESalud) {
+        this.nivelDeSalud = nivelDESalud;
     }
 
-    public void edadMensual() {
+    public int edadMensual() {
 
-        this.edadActual++;
+        return this.edadActual++;
+
+    }
+
+    public void comer(int cantidad) {
+        int porcentaje = cantidad * 100 / this.Apetito;
+
+        if (porcentaje < 25) {
+            this.nivelDeSalud = this.nivelDeSalud - 30;
+        } else if (porcentaje > 25 && porcentaje < 75) {
+            this.nivelDeSalud = this.nivelDeSalud - 20;
+
+        } else if (porcentaje > 75 && porcentaje < 100) {
+            this.nivelDeSalud = this.nivelDeSalud - 10;
+        } else if (porcentaje > 100) {
+            this.nivelDeSalud = this.nivelDeSalud + 5;
+        }
 
     }
 
@@ -114,13 +141,6 @@ public class Dinosaurio extends Entidad {
         return CantidadIngerir;
     }
 
-    public int NivelSalud() {
-        //la cantidad de laimento sera simepre 100 porque no se como cambiarlo ;
-        int salud = 100;
-        salud = salud--;
-        return salud;
-    }
-
     public int IncremetarFavorito() {
         return this.numeroDeFavoritos++;
     }
@@ -131,13 +151,13 @@ public class Dinosaurio extends Entidad {
         if (null != this.getTipoMedio()) {
             switch (this.getTipoMedio()) {
                 case ACUATICO:
-                    delta = 5;
+                    delta = 1;
                     break;
                 case TERRESTRE:
                     delta = 15;
                     break;
                 case VOLADOR:
-                    delta = 25;
+                    delta = 30;
                     break;
                 default:
                     break;
@@ -146,14 +166,9 @@ public class Dinosaurio extends Entidad {
         return delta;
     }
 
-    public int fav(IslaExhibicion IE) {
-        int fav = 10 * this.getEdadQueSeHaceAdulto() * (this.getNivelDESalud() / 100) * IE.ValorAdquisitivo();
-        return fav;
-    }
-
     @Override
     public String toString() {
-        return "Dinosaurio{" + "tipoMedio=" + tipoMedio + ", tipoAlimentacion=" + tipoAlimentacion + ", edadActual=" + edadActual + ", edadQueSeHaceAdulto=" + edadQueSeHaceAdulto + ", nivelDESalud=" + nivelDESalud + ", numeroDeFavoritos=" + numeroDeFavoritos + ", jugadorTipo=" + jugadorTipo + '}';
+        return "Dinosaurio{" + "tipoMedio=" + tipoMedio + ", tipoAlimentacion=" + tipoAlimentacion + ", edadActual=" + edadActual + ", edadQueSeHaceAdulto=" + edadQueSeHaceAdulto + ", nivelDESalud=" + nivelDeSalud + ", numeroDeFavoritos=" + numeroDeFavoritos + ", jugadorTipo=" + jugadorTipo + '}';
     }
 
 }

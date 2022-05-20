@@ -10,10 +10,6 @@ public class IslaCrianza extends Islas {
 
     public IslaCrianza(int UnidadAlimento, int movimientoAlimento, int Hectareas) {
         super(UnidadAlimento, Hectareas, movimientoAlimento);
+
     }
-
-    /* public void eliminaDinosaurio(Dinosaurio d) {
-        d--;
-
-    }*/
 }
