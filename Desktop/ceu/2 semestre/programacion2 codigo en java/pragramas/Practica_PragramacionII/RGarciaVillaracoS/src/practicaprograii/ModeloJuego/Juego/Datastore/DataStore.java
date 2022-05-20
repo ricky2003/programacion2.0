@@ -3,6 +3,8 @@ package practicaprograii.ModeloJuego.Juego.Datastore;
 import java.io.Serializable;
 import java.util.Map;
 import practicaprograii.ModeloJuego.Juego.Entidad.Entidad;
+import practicaprograii.ModeloJuego.Juego.Escenario.Escenario;
+import practicaprograii.ModeloJuego.Juego.partida.Partida;
 
 /**
  *
@@ -33,6 +35,11 @@ public class DataStore extends Entidad implements Serializable {
 
     public int getEscenarios(Entidad eE) {
         return eE.getId();
+    }
+
+    public void getEscenario(Escenario e, Partida p) {
+        e.getId();
+
     }
 
 }

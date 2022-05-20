@@ -23,6 +23,10 @@ public class Escenario extends Entidad {
         this.islaExhibicion = islaExhibicion;
     }
 
+    public Escenario getEscenario(Escenario e) {
+        return e;
+    }
+
     public int getMonedasIniciales() {
         return monedasIniciales;
     }
