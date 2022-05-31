@@ -77,6 +77,7 @@ public class Dinosaurio extends Entidad {
     }
 
     public void setEdadQueSeHaceAdulto(int edadQueSeHaceAdulto) {
+
         this.edadQueSeHaceAdulto = edadQueSeHaceAdulto;
     }
 
@@ -94,19 +95,20 @@ public class Dinosaurio extends Entidad {
 
     }
 
-    public void comer(int cantidad) {
-        int porcentaje = cantidad * 100 / this.Apetito;
+    public int comer(int cantidad) {
+        int porcentajeSalud = cantidad * 100 / this.Apetito;
 
-        if (porcentaje < 25) {
+        if (porcentajeSalud < 25) {
             this.nivelDeSalud = this.nivelDeSalud - 30;
-        } else if (porcentaje > 25 && porcentaje < 75) {
+        } else if (porcentajeSalud > 25 && porcentajeSalud < 75) {
             this.nivelDeSalud = this.nivelDeSalud - 20;
 
-        } else if (porcentaje > 75 && porcentaje < 100) {
+        } else if (porcentajeSalud > 75 && porcentajeSalud < 100) {
             this.nivelDeSalud = this.nivelDeSalud - 10;
-        } else if (porcentaje > 100) {
+        } else if (porcentajeSalud > 100) {
             this.nivelDeSalud = this.nivelDeSalud + 5;
         }
+        return porcentajeSalud;
 
     }
 

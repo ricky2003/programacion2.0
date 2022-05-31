@@ -1,5 +1,8 @@
 package practicaprograii.ModeloJuego.Juego.Escenario;
 
+import practicaprograii.ModeloJuego.Juego.Islas.Crianza.Sorna;
+import practicaprograii.ModeloJuego.Juego.Islas.Exhibicion.Matanceros;
+
 /**
  *
  * @author Ricardo García-Villaraco<ricardo.garciavillaracosanchez@usp.ceu.es>
@@ -7,9 +10,7 @@ package practicaprograii.ModeloJuego.Juego.Escenario;
 public class JurassicWorld extends Escenario {
 
     public JurassicWorld() {
-        super(150000, 0);
-        super.getSorna();
-        super.getMatanceros();
+        super(150000, 0, new Sorna(), new Matanceros());
 
     }
 

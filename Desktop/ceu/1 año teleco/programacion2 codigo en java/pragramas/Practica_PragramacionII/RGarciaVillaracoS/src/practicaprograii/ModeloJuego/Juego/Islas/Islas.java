@@ -44,13 +44,33 @@ public class Islas extends Entidad {
     }
 //INSTALACIONES
 
-    public void añadirIstalacion(Instalacion i) {
+    public boolean añadirIstalacion(Instalacion i) {
+        if (hayHuecoenisla()) {
 
-        this.InstalacionesDeLaIsla.add(i);
+            this.InstalacionesDeLaIsla.add(i);
+
+        }
+        return this.InstalacionesDeLaIsla.add(i);
     }
 
-    public void ElimnacionIsntalcion(Instalacion I) {
-        this.InstalacionesDeLaIsla.remove(I);
+    public boolean ElimnacionIsntalcion(Instalacion I, Entidad e) {
+        if (ContieneLaInslacion(I, e) == false) {
+            this.InstalacionesDeLaIsla.remove(I);
+        }
+        return this.InstalacionesDeLaIsla.remove(I);
+    }
+
+    public boolean ContieneLaInslacion(Instalacion I, Entidad e) {
+        if (super.equals(e.getId())) {
+
+            this.InstalacionesDeLaIsla.contains(I);
+
+        } else {
+            System.out.println("no esta en esta lista ");
+
+        }
+        return this.InstalacionesDeLaIsla.contains(I);
+
     }
 
     //ISLAS

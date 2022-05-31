@@ -20,6 +20,7 @@ public class JugadorTipo extends Entidad {
 
     private IslaCrianza Crianza;
     private IslaExhibicion Exhibicion;
+    private String Alias;
     private int monedasQueTienes;
     private CuadrodDeMandos CuadroDeMandos;
 
@@ -27,10 +28,19 @@ public class JugadorTipo extends Entidad {
         super();//este super te da el id del jugador ;
         this.Crianza = IslaCrianza;
         this.Exhibicion = IslaExhibicion;
+        this.Alias = Alias;
 
     }
 
-    public int fav(Dinosaurio d) {
+    public String getAlias(String Alias) {
+        return Alias;
+    }
+
+    public void setAlias(String Alias) {
+        this.Alias = Alias;
+    }
+
+    public int fav(Dinosaurio d, int cantidad) {
         int fav = 10 * d.getEdadQueSeHaceAdulto() * (d.getNivelDeSalud() / 100) * this.Exhibicion.ValorAdquisitivo();
         return fav;
     }
@@ -53,20 +63,24 @@ public class JugadorTipo extends Entidad {
         }
     }
 
-    public void trasladoDinosaurio(Dinosaurio d, Exhibicion ie, Cria ic, Escenario e) throws Excepcioines {
+    public void trasladoDinosaurio(Dinosaurio d, Exhibicion ie, Cria ic, Escenario e, int cantidad) throws Excepcioines {
 
         int coste = 100 * (int) Math.pow(3, d.getEdadActual() - d.getEdadQueSeHaceAdulto()) * d.getValormedio();
         if (coste <= this.monedasQueTienes) {
-            ic.trasladaDinosaurio(d, ie);
+            ic.trasladaDinosaurio(d, ie, cantidad);
 
         }
 
         if (d.getNivelDeSalud() <= 75) {
+
             throw new Excepcioines();
 
         } else if (ie.Full()) {
+
             throw new Excepcioines();
+
         } else if (e.getMonedasIniciales() < coste) {
+
             throw new Excepcioines();
         }
 

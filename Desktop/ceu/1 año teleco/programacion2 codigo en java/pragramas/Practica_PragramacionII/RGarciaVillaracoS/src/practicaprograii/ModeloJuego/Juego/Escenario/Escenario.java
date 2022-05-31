@@ -23,87 +23,21 @@ public class Escenario extends Entidad {
     private SanDiego sanDiego;
     private Matanceros matanceros;
 
-    public Escenario(int monedas, int Visitantes) {
+    public Escenario(int monedas, int Visitantes, IslaCrianza c, IslaExhibicion e) {
         super();//este super te da el id del jugador ;
         this.VisitantesIniciales = Visitantes;
         this.monedasIniciales = monedas;
+        this.islaCrianza = c;
+        this.islaExhibicion = e;
+
     }
 
-    public Sorna getSorna() {
-        Sorna s = new Sorna();
-        return s;
+    public int getVisitantesIniciales() {
+        return VisitantesIniciales;
     }
 
-    public void setSorna(Sorna sorna) {
-        this.sorna = sorna;
-    }
-
-    public Nublar getNublar() {
-        Nublar n = new Nublar();
-        return n;
-    }
-
-    public void setNublar(Nublar nublar) {
-        this.nublar = nublar;
-    }
-
-    public SanDiego getSanDiego() {
-        SanDiego sd = new SanDiego();
-        return sd;
-    }
-
-    public void setSanDiego(SanDiego sanDiego) {
-        this.sanDiego = sanDiego;
-    }
-
-    public Matanceros getMatanceros() {
-        Matanceros m = new Matanceros();
-        return m;
-    }
-
-    public void setMatanceros(Matanceros matanceros) {
-        this.matanceros = matanceros;
-    }
-
-    public IslaCrianza getIslaCrianzaD() {
-        Escenario Escenario = null;
-        IslaCrianza ic = null;
-
-        if (Escenario == new JurassicPark()) {
-
-            ic = sorna;
-
-        } else if (Escenario == new JurassicParkSanDiego()) {
-
-            ic = sorna;
-
-        } else if (Escenario == new JurassicWorld()) {
-
-            ic = sorna;
-
-        }
-        return islaCrianza;
-    }
-
-    public IslaExhibicion getEscenarioIslaExhibicion() {
-        Escenario Escenario = null;
-        IslaExhibicion ie = null;
-
-        if (Escenario == new JurassicPark()) {
-
-            ie = nublar;
-
-        } else if (Escenario == new JurassicParkSanDiego()) {
-
-            ie = sanDiego;
-
-        } else if (Escenario == new JurassicWorld()) {
-
-            ie = matanceros;
-
-        }
-
-        return ie;
+    public void setVisitantesIniciales(int VisitantesIniciales) {
+        this.VisitantesIniciales = VisitantesIniciales;
     }
 
     public int getMonedasIniciales() {

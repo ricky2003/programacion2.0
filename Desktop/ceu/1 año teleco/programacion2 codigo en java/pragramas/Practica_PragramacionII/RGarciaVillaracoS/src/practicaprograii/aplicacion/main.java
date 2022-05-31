@@ -17,6 +17,8 @@ import practicaprograii.ModeloJuego.Juego.Islas.Exhibicion.IslaExhibicion;
 import practicaprograii.ModeloJuego.Juego.Islas.Exhibicion.Matanceros;
 import practicaprograii.ModeloJuego.Juego.Islas.Exhibicion.Nublar;
 import practicaprograii.ModeloJuego.Juego.Islas.Exhibicion.SanDiego;
+import practicaprograii.ModeloJuego.Juego.Jugador.JugadorTipo;
+import practicaprograii.ModeloJuego.Juego.partida.Partida;
 import practicaprograii.ModeloJuego.Juego.utilidades.utilidades;
 
 /**
@@ -24,6 +26,13 @@ import practicaprograii.ModeloJuego.Juego.utilidades.utilidades;
  * @author Ricardo García-Villaraco<ricardo.garciavillaracosanchez@usp.ceu.es>
  */
 public class main {
+
+    public static String getAlias(JugadorTipo jp) {
+        String Alias = utilidades.LeeCadena("escribe tu alias de jugador");
+        jp.getAlias(Alias);
+        return Alias;
+
+    }
 
     public static Cria getInstalacionCria() {
 
@@ -52,6 +61,21 @@ public class main {
         }
         return cria;
 
+    }
+
+    public static int NivelDelJuego() {
+        System.out.println("elige un nivel  ");
+        System.out.println("1. principiante  ");
+        System.out.println("2. aficionado");
+        System.out.println("3. arcade");
+        System.out.println("4. Modo chocas");
+
+        int i = utilidades.LeeEntero("escribe un numero");
+
+        switch (i) {
+            // conseguir las cosas sera mas complicado a medida de que subas de nivel
+        }
+        return i;
     }
 
     public static Exhibicion getInstalacionExhibicion() {
@@ -120,7 +144,7 @@ public class main {
 
     }
 
-    public static Escenario getEscenario() {
+    public static Escenario getEscenario(Partida p) {
 
         System.out.println("elige un escenario ");
         System.out.println("1. JurassicPark ");
@@ -141,11 +165,13 @@ public class main {
                 break;
 
         }
+        p.añadirEscenario(e);
+
         return e;
 
     }
 
-    public static Dinosaurio CreaDinosaurioAleatorio() {
+    public static Dinosaurio CreaDinosaurioAleatorio(Instalacion ins) {
 
         int i = (int) (Math.random() * 5) + 1;
         Dinosaurio DinoDeLaInstalacion = null;
@@ -172,6 +198,7 @@ public class main {
                 break;
 
         }
+        ins.añadirDinosaurio(DinoDeLaInstalacion);
 
         return DinoDeLaInstalacion;
 
@@ -201,8 +228,7 @@ public class main {
         //System.out.println("la isla de exhibicion es: " + getIslaExhibicion());
         //System.out.println("la instalacion de cria es: " + getInstalacionCria());
         //System.out.println("la instalacion de exhibicion: " + getInstalacionExhibicion());
-        System.out.println("el escenario elegido sera: " + getEscenario());
-
+        //System.out.println("el escenario elegido sera: " + getEscenario());
     }
 
 }

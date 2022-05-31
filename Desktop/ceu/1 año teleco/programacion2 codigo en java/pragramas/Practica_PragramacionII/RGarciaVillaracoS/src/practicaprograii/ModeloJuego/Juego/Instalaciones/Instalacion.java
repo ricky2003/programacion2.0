@@ -1,7 +1,6 @@
 package practicaprograii.ModeloJuego.Juego.Instalaciones;
 
 import java.util.ArrayList;
-import java.util.Random;
 import practicaprograii.ModeloJuego.Juego.Dinosaurios.Dinosaurio;
 import practicaprograii.ModeloJuego.Juego.Entidad.Entidad;
 import practicaprograii.ModeloJuego.Juego.Instalaciones.Exhibicion.Exhibicion;
@@ -26,6 +25,18 @@ public class Instalacion extends Entidad {
     private ArrayList<Dinosaurio> DinosauriosDeInsatalacion;
     private int maximonumerodinosaurio;
 
+    /* public Instalacion() {
+        super();
+        this.costeDeContruccion = 25000;
+        this.hectareas = 700;
+        this.tipoRecinto = TipoRecinto.ELECTRIFICADO;
+        this.maximonumerodinosaurio = 7;
+        this.tipoMedio = TipoMedio.ACUATICO;
+        this.tipoDeAlimentacion = TipoAlimentacion.CARNIVORO;
+        this.unidadesAlimentacion = 5;
+        this.moendad_Por_Unida_de_Alimento = 5;
+        this.DinosauriosDeInsatalacion = new ArrayList();
+    }*/
     public Instalacion(int CosteDeContruccion, int MaximoNumeroDinosaurio, int alimento, int Hectareas, TipoRecinto TipoRecinto, TipoMedio TipoMedio, TipoAlimentacion TipoDeAlimentacion) {
         super();//este super te da el id del jugador ;
         this.costeDeContruccion = CosteDeContruccion;
@@ -40,37 +51,15 @@ public class Instalacion extends Entidad {
 
     }
 
-    public Instalacion() {
-        super();
-        this.costeDeContruccion = 25000;
-        this.hectareas = 700;
-        this.tipoRecinto = TipoRecinto.ELECTRIFICADO;
-        this.maximonumerodinosaurio = 7;
-        this.tipoMedio = TipoMedio.ACUATICO;
-        this.tipoDeAlimentacion = TipoAlimentacion.CARNIVORO;
-        this.unidadesAlimentacion = 5;
-        this.moendad_Por_Unida_de_Alimento = 5;
-        this.DinosauriosDeInsatalacion = new ArrayList();
-    }
+    public boolean ElimnacionDinosaurio(Dinosaurio d, int cantidad) {
 
-    public boolean clonar(Dinosaurio d) {
-        Random rand = new Random();
-
-        int numeroAzar = rand.nextInt(this.DinosauriosDeInsatalacion.size());
-
-        Dinosaurio DinoElegido = this.DinosauriosDeInsatalacion.get(numeroAzar);
-
-        this.DinosauriosDeInsatalacion.add(d);
-
-        boolean clon = this.añadirDinosaurio(d);
-        return this.DinosauriosDeInsatalacion.add(d);
-
-    }
-
-    public boolean ElimnacionDinosaurio(Dinosaurio d) {
         if (Full()) {
 
             this.DinosauriosDeInsatalacion.remove(d);
+
+        } else if (d.comer(cantidad) == 0) {
+            this.DinosauriosDeInsatalacion.remove(d);
+
         } else {
             System.out.println("no pude estar aqui ese dinosaurio");
         }
@@ -80,6 +69,7 @@ public class Instalacion extends Entidad {
     public boolean añadirDinosaurio(Dinosaurio d) {
         if (hayHueco()) {
             this.DinosauriosDeInsatalacion.add(d);
+
         } else {
             System.out.println("no hay espacio");
         }
@@ -92,12 +82,12 @@ public class Instalacion extends Entidad {
 
     }
 
-    public Dinosaurio trasladaDinosaurio(Dinosaurio d, Exhibicion ie) {
+    public Dinosaurio trasladaDinosaurio(Dinosaurio d, Exhibicion ie, int cantidad) {
 
         if (this.existeDinosaurio(d)) {
             if (ie.hayHueco()) {
                 ie.añadirDinosaurio(d);
-                this.ElimnacionDinosaurio(d);
+                this.ElimnacionDinosaurio(d, cantidad);
             } else {
                 System.out.println("no hay hueco");
             }

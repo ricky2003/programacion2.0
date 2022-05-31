@@ -1,7 +1,7 @@
 package practicaprograii.ModeloJuego.Juego.partida;
 
+import static java.lang.System.exit;
 import java.util.ArrayList;
-import practicaprograii.ModeloJuego.Juego.Dinosaurios.Carnivoros.Mosasaurio;
 import practicaprograii.ModeloJuego.Juego.Entidad.Entidad;
 import practicaprograii.ModeloJuego.Juego.Escenario.Escenario;
 import practicaprograii.ModeloJuego.Juego.Instalaciones.Instalacion;
@@ -26,11 +26,26 @@ public class Partida extends Entidad {
         this.Escenarios = new ArrayList();
     }
 
-    public void añadirEscenario(Escenario e) {
-        this.Escenarios.add(e);
+    public boolean añadirEscenario(Escenario e) {
+
+        if (hayHueco()) {
+
+            this.Escenarios.add(e);
+
+        } else {
+
+            System.out.println("no hay escenario ");
+
+        }
+        return this.Escenarios.add(e);
     }
 
-    public boolean existeEscenario(Escenario e) {
+    public boolean existeEscenario(Escenario e, Entidad id) {
+        if (super.equals(id)) {
+            this.Escenarios.contains(e);
+        } else {
+            System.out.println("este escenario no esta en la lista de escenrios");
+        }
         return this.Escenarios.contains(e);
     }
 
@@ -38,19 +53,18 @@ public class Partida extends Entidad {
         return this.Escenarios.size() < 3;
     }
 
-    public boolean FinalPardia() {
-        if (this.FinPartida = true) {
-            // System.out.println("la partida ha terminado");
+    public boolean FinalPardia(Instalacion i) {
+        if (i.getDinosauriosDeInsatalacion() == null) {
+            exit(0);
         }
         return this.FinPartida;
     }
 
-    public static void main(String[] args) {
+    /* public static void main(String[] args) {
         Instalacion ins = new Instalacion();
         Mosasaurio m = new Mosasaurio();
         ins.añadirDinosaurio(m);
         System.out.println(ins.getDinosauriosDeInsatalacion());
 
-    }
-
+    }*/
 }
