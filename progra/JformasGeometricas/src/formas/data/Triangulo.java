@@ -14,11 +14,6 @@ public class Triangulo extends FormaGeometrica {
     private double base;
     private double altura;
 
-    public Triangulo() {
-
-        this(1, 1, 3, 4, Color.BLANCO, Color.NEGRO);
-    }
-
     /**
      *
      * @param base
@@ -36,6 +31,11 @@ public class Triangulo extends FormaGeometrica {
         this.base = base;
         this.altura = altura;
 
+    }
+
+    public Triangulo() {
+
+        this(1, 1, 3, 4, Color.BLANCO, Color.NEGRO);
     }
 
     @Override
