@@ -4,7 +4,7 @@ import practicaprograii.ModeloJuego.Juego.CuadroDeMandos.CuadrodDeMandos;
 import practicaprograii.ModeloJuego.Juego.Dinosaurios.Dinosaurio;
 import practicaprograii.ModeloJuego.Juego.Entidad.Entidad;
 import practicaprograii.ModeloJuego.Juego.Escenario.Escenario;
-import practicaprograii.ModeloJuego.Juego.Excepciones.Excepcioines;
+import practicaprograii.ModeloJuego.Juego.Excepciones.Excepciones;
 import practicaprograii.ModeloJuego.Juego.Instalaciones.Cria.*;
 import practicaprograii.ModeloJuego.Juego.Instalaciones.Exhibicion.*;
 import practicaprograii.ModeloJuego.Juego.Instalaciones.Instalacion;
@@ -21,15 +21,23 @@ public class JugadorTipo extends Entidad {
     private IslaCrianza Crianza;
     private IslaExhibicion Exhibicion;
     private String Alias;
+    private final int CobroDeLaEntrada;
     private int monedasQueTienes;
     private CuadrodDeMandos CuadroDeMandos;
 
     public JugadorTipo(String Alias, IslaCrianza IslaCrianza, IslaExhibicion IslaExhibicion) {
         super();//este super te da el id del jugador ;
+        this.CobroDeLaEntrada = 5;
         this.Crianza = IslaCrianza;
         this.Exhibicion = IslaExhibicion;
         this.Alias = Alias;
 
+    }
+
+    public int CobroEntradas(Escenario e) {
+
+        int entradas = e.getMonedasIniciales() - this.CobroDeLaEntrada;
+        return entradas;
     }
 
     public String getAlias(String Alias) {
@@ -63,7 +71,7 @@ public class JugadorTipo extends Entidad {
         }
     }
 
-    public void trasladoDinosaurio(Dinosaurio d, Exhibicion ie, Cria ic, Escenario e, int cantidad) throws Excepcioines {
+    public void trasladoDinosaurio(Dinosaurio d, Exhibicion ie, Cria ic, Escenario e, int cantidad) throws Excepciones {
 
         int coste = 100 * (int) Math.pow(3, d.getEdadActual() - d.getEdadQueSeHaceAdulto()) * d.getValormedio();
         if (coste <= this.monedasQueTienes) {
@@ -72,16 +80,15 @@ public class JugadorTipo extends Entidad {
         }
 
         if (d.getNivelDeSalud() <= 75) {
+            System.out.println("error en le traslado");
+        }
+        if (ie.Full()) {
+            ie.getDinosauriosDeInsatalacion().remove(d);
+        }
 
-            throw new Excepcioines();
+        if (e.getMonedasIniciales() < coste) {
+            System.out.println("error en el coste");
 
-        } else if (ie.Full()) {
-
-            throw new Excepcioines();
-
-        } else if (e.getMonedasIniciales() < coste) {
-
-            throw new Excepcioines();
         }
 
     }

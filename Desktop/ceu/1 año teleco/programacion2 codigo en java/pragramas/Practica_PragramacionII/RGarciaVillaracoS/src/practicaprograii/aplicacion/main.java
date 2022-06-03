@@ -59,23 +59,9 @@ public class main {
                 cria = new CVC02();
                 break;
         }
+
         return cria;
 
-    }
-
-    public static int NivelDelJuego() {
-        System.out.println("elige un nivel  ");
-        System.out.println("1. principiante  ");
-        System.out.println("2. aficionado");
-        System.out.println("3. arcade");
-        System.out.println("4. Modo chocas");
-
-        int i = utilidades.LeeEntero("escribe un numero");
-
-        switch (i) {
-            // conseguir las cosas sera mas complicado a medida de que subas de nivel
-        }
-        return i;
     }
 
     public static Exhibicion getInstalacionExhibicion() {
@@ -140,6 +126,7 @@ public class main {
                 break;
 
         }
+
         return Ie;
 
     }
@@ -171,7 +158,8 @@ public class main {
 
     }
 
-    public static Dinosaurio CreaDinosaurioAleatorio(Instalacion ins) {
+    public static Dinosaurio CreaDinosaurioAleatorio() {
+        Instalacion ins = getInstalacionCria();
 
         int i = (int) (Math.random() * 5) + 1;
         Dinosaurio DinoDeLaInstalacion = null;
@@ -214,7 +202,8 @@ public class main {
         }
     }
 
-    public static void CogerDinosauriosDeInstalacion(Instalacion ins) {
+    public static void CogerDinosauriosDeInstalacion() {
+        Instalacion ins = getInstalacionCria();
         for (Dinosaurio d : ins.getDinosauriosDeInsatalacion()) {
             System.out.println(d.toString());
         }
@@ -222,13 +211,13 @@ public class main {
     }
 
     public static void main(String[] args) {
-        // System.out.println("el dinosaurioElegido es: " + CreaDinosaurioAleatorio());
 
-        //System.out.println("la isla de craiza es: " + getInstalacionCria());
-        //System.out.println("la isla de exhibicion es: " + getIslaExhibicion());
-        //System.out.println("la instalacion de cria es: " + getInstalacionCria());
-        //System.out.println("la instalacion de exhibicion: " + getInstalacionExhibicion());
-        //System.out.println("el escenario elegido sera: " + getEscenario());
+        System.out.println("el dinosaurioElegido es: " + CreaDinosaurioAleatorio());
+
+        System.out.println("la isla de craiza es: " + getInstalacionCria());
+        System.out.println("la isla de exhibicion es: " + getIslaExhibicion());
+        System.out.println("la instalacion de cria es: " + getInstalacionCria());
+        System.out.println("la instalacion de exhibicion: " + getInstalacionExhibicion());
     }
 
 }

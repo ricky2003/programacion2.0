@@ -10,7 +10,6 @@ public class Branchiosaurio extends Herbivoros {
 
     public Branchiosaurio() {
         super(TipoMedio.TERRESTRE, 0, 12, 0, 2);
-
     }
 
 }

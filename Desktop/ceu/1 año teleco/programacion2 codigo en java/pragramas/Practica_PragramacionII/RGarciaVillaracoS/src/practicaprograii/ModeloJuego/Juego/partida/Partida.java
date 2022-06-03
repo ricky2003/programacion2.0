@@ -14,8 +14,8 @@ import practicaprograii.ModeloJuego.Juego.Jugador.JugadorTipo;
 public class Partida extends Entidad {
 
     private Escenario escenario;
-    private JugadorTipo jugador;
-    private boolean FinPartida;
+    private final JugadorTipo jugador;
+    private final boolean FinPartida;
     private ArrayList<Escenario> Escenarios;
 
     public Partida(Escenario escenario, JugadorTipo jugador, int id, boolean FinPartida) {
@@ -30,27 +30,27 @@ public class Partida extends Entidad {
 
         if (hayHueco()) {
 
-            this.Escenarios.add(e);
+            Escenarios.add(e);
 
         } else {
 
             System.out.println("no hay escenario ");
 
         }
-        return this.Escenarios.add(e);
+        return Escenarios.add(e);
     }
 
     public boolean existeEscenario(Escenario e, Entidad id) {
         if (super.equals(id)) {
-            this.Escenarios.contains(e);
+            Escenarios.contains(e);
         } else {
             System.out.println("este escenario no esta en la lista de escenrios");
         }
-        return this.Escenarios.contains(e);
+        return Escenarios.contains(e);
     }
 
     public boolean hayHueco() {
-        return this.Escenarios.size() < 3;
+        return Escenarios.size() < 3;
     }
 
     public boolean FinalPardia(Instalacion i) {
@@ -60,11 +60,4 @@ public class Partida extends Entidad {
         return this.FinPartida;
     }
 
-    /* public static void main(String[] args) {
-        Instalacion ins = new Instalacion();
-        Mosasaurio m = new Mosasaurio();
-        ins.añadirDinosaurio(m);
-        System.out.println(ins.getDinosauriosDeInsatalacion());
-
-    }*/
 }

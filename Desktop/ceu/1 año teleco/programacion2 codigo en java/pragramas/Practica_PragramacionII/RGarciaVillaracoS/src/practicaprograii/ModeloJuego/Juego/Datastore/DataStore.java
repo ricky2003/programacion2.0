@@ -33,8 +33,8 @@ public class DataStore extends Entidad implements Serializable {
         return eIsla.getId();
     }
 
-    public int getEscenarios(Entidad eE) {
-        return eE.getId();
+    public int getEscenarios(Entidad e) {
+        return e.getId();
     }
 
     public void getEscenario(Escenario e, Partida p) {
