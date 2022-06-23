@@ -10,9 +10,9 @@ public class main {
 
     public static void main(String[] args) {
         Set<Nombre> setOrdenNatural = new TreeSet();
-        setOrdenNatural.add(new Nombre("Ricardo", "Carmen"));
-        setOrdenNatural.add(new Nombre("Jesus", "Paula"));
-        setOrdenNatural.add(new Nombre("Jesus", "Loreto"));
+        setOrdenNatural.add(new Nombre("Ricardo", "Carmen", 18));
+        setOrdenNatural.add(new Nombre("Jesus", "Paula", 22));
+        setOrdenNatural.add(new Nombre("Jesus", "Loreto", 50));
 
         Iterator<Nombre> it = setOrdenNatural.iterator();
         while (it.hasNext()) {
@@ -25,6 +25,7 @@ public class main {
          for (Nombre elemento : setOrdenMedianteComparador) {
             System.out.println(elemento);
         }*/
+
     }
 
 }

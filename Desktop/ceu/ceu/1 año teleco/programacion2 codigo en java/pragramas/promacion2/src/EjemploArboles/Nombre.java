@@ -9,10 +9,12 @@ import java.util.*;
 public class Nombre implements Comparable<Nombre> {
 
     private String nombre, apellidos;
+    private int edad;
 
-    public Nombre(String nombre, String apellidos) {
+    public Nombre(String nombre, String apellidos, int edad) {
         this.nombre = nombre;
         this.apellidos = apellidos;
+        this.edad = edad;
     }
 
     /**
@@ -28,6 +30,39 @@ public class Nombre implements Comparable<Nombre> {
         } else {
             return nombre.compareTo(objeto.nombre);
         }
+    }
+
+    public int compareTo2(Nombre objeto) {
+        if (edad > objeto.getEdad()) {
+            return 1;
+        } else if (edad < objeto.getEdad()) {
+            return -1;
+        }
+        return 0;//cuando son iguales es 0
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
     }
 
     /**

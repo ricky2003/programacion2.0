@@ -1,8 +1,6 @@
 package practicaprograii.ModeloJuego.Juego.utilidades;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
 /**
  *
@@ -24,15 +22,14 @@ public class utilidades {
         try {
             cadena = consola.readLine();//es el scanf de c
 
-        } catch (IOException ex) {
+        } catch (IOException ioe) {
             cadena = "";
+            ioe.printStackTrace();
         }
 
         return cadena;
 
     }
-
-    ;
 
     /**
      * esta funcion lee un entero por consola
@@ -50,6 +47,7 @@ public class utilidades {
                 incorrecto = false;
             } catch (NumberFormatException nfe) {
                 elNumero = 0;
+                nfe.printStackTrace();
 
             }
         }
@@ -57,13 +55,12 @@ public class utilidades {
 
     }
 
-    ;
     /**
      * lee un doble del la pregunta
+     *
      * @param Pregunta
      * @return
      */
-
     public static double LeeDouble(String Pregunta) {
         String CadenaNumero = LeeCadena(Pregunta);
         double elNumero = 0;
@@ -74,12 +71,29 @@ public class utilidades {
                 incorrecto = false;
             } catch (NumberFormatException nfe) {
                 elNumero = 0;
+                nfe.printStackTrace();
             }
         }
         return elNumero;
 
     }
 
-;
+    public static float LeeFloat(String Pregunta) {
+        String CadenaNumero = LeeCadena(Pregunta);
+        float elnumero = 0;
+        boolean incorrecto = true;
+        while (incorrecto) {
+            try {
+                elnumero = Float.parseFloat(CadenaNumero);
+                incorrecto = false;
+
+            } catch (NumberFormatException nfe) {
+                elnumero = 0;
+                nfe.printStackTrace();
+
+            }
+        }
+        return elnumero;
+    }
 
 }
