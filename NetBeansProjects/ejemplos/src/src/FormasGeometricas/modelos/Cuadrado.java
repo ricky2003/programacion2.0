@@ -1,4 +1,4 @@
-package FormasGeometricas.modelos;
+package src.FormasGeometricas.modelos;
 
 /**
  *
