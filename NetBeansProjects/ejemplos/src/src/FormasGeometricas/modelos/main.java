@@ -82,6 +82,12 @@ public class main {
         System.out.println("el color de la linea del circulo 2" + cl2.getColorLinea());
         cl1.Pintar();
 
+        Triangulo t1 = new Triangulo(2, 4, 6, 8, Color.AZUL, Color.BLANCO);
+        Triangulo t2 = new Triangulo();
+        System.out.println("el primner trinagulo es " + t1);
+        System.out.println("el segubdo triangulo es " + t2);
+        t1.pintar();
+
     }
 
 }
