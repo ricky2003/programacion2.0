@@ -10,7 +10,7 @@ public class Circulo {
     private Color ColorLinea;
     private Color ColorForma;
 
-    public Circulo(int radio, Color ColorForma, Color ColorLinea) {
+    public Circulo(double radio, Color ColorForma, Color ColorLinea) {
         this.radio = radio;
         this.ColorLinea = ColorLinea;
         this.ColorForma = ColorForma;
@@ -21,6 +21,7 @@ public class Circulo {
         this.ColorLinea = Color.NEGRO;
         this.ColorForma = Color.BLANCO;
     }
+    //SETTERS AND GETTERS
 
     public double getRadio() {
         return radio;
@@ -46,6 +47,7 @@ public class Circulo {
         this.ColorForma = ColorForma;
     }
 
+    //FUNCIONES
     public double Area() {
         double area = (double) Math.PI * (Math.pow(this.radio, 2));
         return area;

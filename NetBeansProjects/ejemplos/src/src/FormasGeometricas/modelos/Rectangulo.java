@@ -34,6 +34,7 @@ public class Rectangulo {
         this.colorForma = Color.NEGRO;
     }
 
+    //SETTERS AND GETTERS
     public double getLado1() {
         return lado1;
     }
@@ -66,6 +67,7 @@ public class Rectangulo {
         this.colorForma = colorForma;
     }
 
+    //FUNCIONES
     public double getArea() {
         double areaReactangulo = 0;
 

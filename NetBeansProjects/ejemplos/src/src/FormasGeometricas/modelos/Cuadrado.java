@@ -6,7 +6,7 @@ package src.FormasGeometricas.modelos;
  */
 public class Cuadrado extends Rectangulo {
 
-    public Cuadrado(int lado, Color colorLinea, Color colorForma) {
+    public Cuadrado(double lado, Color colorLinea, Color colorForma) {
         super(lado, lado, colorLinea, colorForma);
 
     }
@@ -14,14 +14,23 @@ public class Cuadrado extends Rectangulo {
     public Cuadrado() {
         super(1, 1, Color.NEGRO, Color.BLANCO);
     }
+//SETTERS AND GETTERS
 
-    public double getLado() {
+    /* public double getLado() {
         return getLado1();
     }
 
     public void setLado(double lado) {
         setLado1(lado);
         setLado2(lado);
+    }*/
+    public void setLado(double lado) {
+        super.setLado1(lado);
+        super.setLado2(lado);
+    }
+
+    public double getLado() {
+        return super.getLado1();
     }
 
     @Override
@@ -43,6 +52,7 @@ public class Cuadrado extends Rectangulo {
     public void setColorForma(Color colorForma) {
         this.colorForma = colorForma;
     }
+//FUNCIONES
 
     public void Pintar() {
 

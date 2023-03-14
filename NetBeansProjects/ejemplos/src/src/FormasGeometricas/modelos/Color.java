@@ -6,6 +6,6 @@ package src.FormasGeometricas.modelos;
  */
 public enum Color {
 
-    AZUL, VERTDE, ROJO, BLANCO, NEGRO
+    AZUL, VERDE, ROJO, BLANCO, NEGRO
 
 }
