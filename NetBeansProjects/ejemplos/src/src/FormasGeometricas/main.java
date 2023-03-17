@@ -1,4 +1,7 @@
-package src.FormasGeometricas.modelos;
+package src.FormasGeometricas;
+
+import java.util.ArrayList;
+import src.FormasGeometricas.modelos.*;
 
 /**
  *
@@ -46,6 +49,7 @@ public class main {
         Rectangulo r3;
         System.out.println("el primer rectangulo es " + r1);
         System.out.println("el segundo rectangulo es " + r2);
+        ArrayList<FormasGeometricas> formas = new ArrayList();
 
         System.out.println("escribe un valor para el lado 1");
         int lado1R3 = src.util.LeerNumeroPorTeclado1.leerNumero();
@@ -56,6 +60,7 @@ public class main {
         r3 = new Rectangulo(lado1R3, lado2R3, colorForma, colorLinea);
         System.out.println("el tercer rectangulo es: " + r3);
         r3.Pintar();
+        r3.Pintarractangulo();
 
         Cuadrado c1 = new Cuadrado(3.4, Color.AZUL, Color.VERDE);
         Cuadrado c2 = new Cuadrado();
@@ -88,6 +93,15 @@ public class main {
         System.out.println("el segubdo triangulo es " + t2);
         t1.pintar();
 
+        /*
+        formas.add(r1);
+        formas.add(c1);
+        formas.add(cl1);
+        formas.add(t1);
+        //pintar todas las formas
+        for (FormasGeometricas fg : formas) {
+            fg.Pintar();
+        }*/
     }
 
 }

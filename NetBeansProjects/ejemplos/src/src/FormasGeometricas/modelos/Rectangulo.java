@@ -4,7 +4,7 @@ package src.FormasGeometricas.modelos;
  *
  * @author Ricardo García-Villaraco<ricardo.garciavillaracosanchez@usp.ceu.es>
  */
-public class Rectangulo {
+public class Rectangulo extends FormasGeometricas {
 
     private double lado1;
     private double lado2;
@@ -13,6 +13,7 @@ public class Rectangulo {
     protected Color colorForma;
 
     public Rectangulo(double lado1, double lado2, Color colorLinea, Color colorForma) {
+        super(colorLinea, colorForma);
         this.lado1 = lado1;
         this.lado2 = lado2;
         if (lado1 > 0 && lado2 > 0) {
@@ -22,16 +23,10 @@ public class Rectangulo {
             this.lado1 = 0;
             this.lado2 = 0;
         }
-        this.colorLinea = colorLinea;
-        this.colorForma = colorForma;
     }
 
     public Rectangulo() {
-        this.lado1 = 1;
-        this.lado2 = 1;
-
-        this.colorLinea = Color.BLANCO;
-        this.colorForma = Color.NEGRO;
+        this(1, 2, Color.NEGRO, Color.NEGRO);
     }
 
     //SETTERS AND GETTERS
@@ -51,23 +46,8 @@ public class Rectangulo {
         this.lado2 = lado2;
     }
 
-    public Color getColorLinea() {
-        return colorLinea;
-    }
-
-    public void setColorLinea(Color colorLinea) {
-        this.colorLinea = colorLinea;
-    }
-
-    public Color getColorForma() {
-        return colorForma;
-    }
-
-    public void setColorForma(Color colorForma) {
-        this.colorForma = colorForma;
-    }
-
     //FUNCIONES
+    @Override
     public double getArea() {
         double areaReactangulo = 0;
 
@@ -76,6 +56,7 @@ public class Rectangulo {
 
     }
 
+    @Override
     public double getPerimetro() {
         double perimetro = 0;
         if (lado1 >= 1 && lado2 >= 1) {
@@ -88,8 +69,14 @@ public class Rectangulo {
 
     }
 
+    @Override
     public void Pintar() {
+        super.Pintar();
+        System.out.println("area :" + this.getArea() + "perimetro :" + this.getPerimetro());
 
+    }
+
+    public void Pintarractangulo() {
         System.out.println("-----------");
         System.out.println("|         |");
         System.out.println("|         |");
@@ -102,8 +89,8 @@ public class Rectangulo {
 
     @Override
     public String toString() {
-        return "Rectangulo{" + "lado1=" + lado1 + ", lado2=" + lado2
-                + ", colorLinea=" + colorLinea + ", colorForma=" + colorForma + '}';
+        return "Rectangulo{" + "lado1=" + this.lado1 + ", lado2=" + this.lado2
+                + ", colorLinea=" + this.getColorLinea() + ", colorForma=" + this.getColorForma() + '}';
     }
 
 }

@@ -4,22 +4,17 @@ package src.FormasGeometricas.modelos;
  *
  * @author Ricardo García-Villaraco<ricardo.garciavillaracosanchez@usp.ceu.es>
  */
-public class Circulo {
+public class Circulo extends FormasGeometricas {
 
     private double radio;
-    private Color ColorLinea;
-    private Color ColorForma;
 
     public Circulo(double radio, Color ColorForma, Color ColorLinea) {
+        super(ColorForma, ColorLinea);
         this.radio = radio;
-        this.ColorLinea = ColorLinea;
-        this.ColorForma = ColorForma;
     }
 
     public Circulo() {
-        this.radio = 1;
-        this.ColorLinea = Color.NEGRO;
-        this.ColorForma = Color.BLANCO;
+        this(1, Color.BLANCO, Color.NEGRO);
     }
     //SETTERS AND GETTERS
 
@@ -31,34 +26,24 @@ public class Circulo {
         this.radio = radio;
     }
 
-    public Color getColorLinea() {
-        return ColorLinea;
-    }
-
-    public void setColorLinea(Color ColorLinea) {
-        this.ColorLinea = ColorLinea;
-    }
-
-    public Color getColorForma() {
-        return ColorForma;
-    }
-
-    public void setColorForma(Color ColorForma) {
-        this.ColorForma = ColorForma;
-    }
-
     //FUNCIONES
-    public double Area() {
+    @Override
+    public double getArea() {
         double area = (double) Math.PI * (Math.pow(this.radio, 2));
         return area;
     }
 
-    public double Perimetro() {
+    @Override
+    public double getPerimetro() {
         double perimetro = 2 * Math.PI * this.radio;
         return perimetro;
     }
 
+    @Override
     public void Pintar() {
+        super.Pintar();
+        System.out.println("area :" + this.getArea() + "perimetro :" + this.getPerimetro());
+
         System.out.println("    _____");
         System.out.println("   /     \\");
         System.out.println("  |       |");

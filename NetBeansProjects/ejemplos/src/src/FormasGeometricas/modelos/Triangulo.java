@@ -4,30 +4,29 @@ package src.FormasGeometricas.modelos;
  *
  * @author Ricardo García-Villaraco<ricardo.garciavillaracosanchez@usp.ceu.es>
  */
-public class Triangulo {
+public class Triangulo extends FormasGeometricas {
 
-    protected double lado1;
-    protected double lado2;
     protected double base;
     protected double altura;
+    protected double lado1;
+    protected double lado2;
 
-    private Color colorForma;
-    private Color colorLinea;
-
-    public Triangulo(double lado1, double lado2, double lado3, double altura, Color colorLinea, Color colorForma) {
+    public Triangulo(double lado1, double lado2, double base, double altura, Color colorLinea, Color colorForma) {
+        super(colorLinea, colorForma);
         this.lado1 = lado1;
         this.lado2 = lado2;
-        this.base = lado3;
+        this.base = base;
         this.altura = altura;
-        this.colorForma = colorForma;
-        this.colorLinea = colorLinea;
+
     }
 
     public Triangulo() {
+        super(Color.BLANCO, Color.NEGRO);
         this.lado1 = 1;
-        this.lado2 = 2;
+        this.lado2 = 1;
         this.base = 3;
         this.altura = 4;
+
     }
 
     //GETTERS AND SETTERS
@@ -47,22 +46,6 @@ public class Triangulo {
         this.lado2 = lado2;
     }
 
-    public Color getColorForma() {
-        return colorForma;
-    }
-
-    public void setColorForma(Color colorForma) {
-        this.colorForma = colorForma;
-    }
-
-    public Color getColorLinea() {
-        return colorLinea;
-    }
-
-    public void setColorLinea(Color colorLinea) {
-        this.colorLinea = colorLinea;
-    }
-
     public double getBase() {
         return base;
     }
@@ -80,17 +63,21 @@ public class Triangulo {
     }
 
     //FUNCIONES
-    public double area() {
+    @Override
+    public double getArea() {
         double area = (this.base * this.altura) / 2;
         return area;
     }
 
-    public double perimetro() {
-        double area = this.lado1 + this.lado2 + this.base;
+    @Override
+    public double getPerimetro() {
+        double area = this.getLado1() + this.altura + this.base;
         return area;
     }
 
     public void pintar() {
+        super.Pintar();
+        System.out.println("area :" + this.getArea() + "perimetro :" + this.getPerimetro());
         System.out.println("   /\\ ");
         System.out.println("  /  \\");
         System.out.println(" /    \\");
@@ -100,8 +87,7 @@ public class Triangulo {
     @Override
     public String toString() {
         return "trinagulo ---> con lado1: " + this.lado1 + " lado 2 "
-                + this.lado2 + "base : " + this.base + "altura: " + this.altura
-                + "el color de la forma es : " + this.colorForma + "y el color de la linea es:" + this.colorLinea;
+                + this.lado2 + "base : " + this.base + "altura: " + this.altura;
     }
 
 }

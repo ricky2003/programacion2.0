@@ -16,46 +16,19 @@ public class Cuadrado extends Rectangulo {
     }
 //SETTERS AND GETTERS
 
-    /* public double getLado() {
-        return getLado1();
-    }
-
     public void setLado(double lado) {
-        setLado1(lado);
-        setLado2(lado);
-    }*/
-    public void setLado(double lado) {
-        super.setLado1(lado);
-        super.setLado2(lado);
+        this.setLado1(lado);
+        this.setLado2(lado);
     }
 
     public double getLado() {
-        return super.getLado1();
-    }
-
-    @Override
-    public Color getColorLinea() {
-        return colorLinea;
-    }
-
-    @Override
-    public void setColorLinea(Color colorLinea) {
-        this.colorLinea = colorLinea;
-    }
-
-    @Override
-    public Color getColorForma() {
-        return colorForma;
-    }
-
-    @Override
-    public void setColorForma(Color colorForma) {
-        this.colorForma = colorForma;
+        return this.getLado1();
     }
 //FUNCIONES
 
+    @Override
     public void Pintar() {
-
+        super.Pintar();
         System.out.println("-----------");
         System.out.println("|         |");
         System.out.println("|         |");
@@ -65,8 +38,8 @@ public class Cuadrado extends Rectangulo {
 
     @Override
     public String toString() {
-        return "Cuadrado{" + "lado=" + getLado() + ", colorLinea="
-                + colorLinea + ", colorForma=" + colorForma + '}';
+        return "Cuadrado{" + "lado=" + this.getLado() + ", colorLinea="
+                + this.getColorLinea() + ", colorForma=" + this.getColorForma() + '}';
     }
 
 }
