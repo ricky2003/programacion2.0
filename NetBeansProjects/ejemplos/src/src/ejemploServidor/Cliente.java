@@ -16,16 +16,19 @@ public class Cliente {
         OutputStream os = null;
         InputStream is = null;
         try {
-            s = new Socket("192.168.0.0.1", 8081);
+            s = new Socket("10.0.0.1", 8081);
+
             os = s.getOutputStream();
             dos = new DataOutputStream(os);
             dos.writeBytes("bien , yo soy el cliente");
             dos.writeInt(23);
+
             is = s.getInputStream();
             dis = new DataInputStream(is);
-            System.out.println(dis.readLine());
+            System.out.println(dis.readUTF());
             System.out.println(dis.readInt());
-        } catch (IOException ioe) {
+
+        } catch (Exception e) {
             System.out.println("error en alguna parte del programa");
         } finally {
             if (s != null) {

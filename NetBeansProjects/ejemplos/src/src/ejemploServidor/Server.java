@@ -27,8 +27,8 @@ public class Server {
             dos.writeBytes("hola que tal!");
             dos.writeFloat(2.3f);
 
-        } catch (IOException ioe) {
-            System.out.println("error en ele servidor");
+        } catch (IOException e) {
+            System.out.println("error en el servidor");
         } finally {
             if (ss != null) {
                 try {
